@@ -14,6 +14,12 @@ The following steps are only for _one_ of the group members to perform.
 
 ## Getting Started
 
+Express-Back-End
+
+You need TWO terminal windows/tabs for this (or some other plan for running two Node processes).
+
+In one terminal for express-back-end, cd to the express-back-end folder and follow these instructions:
+
 1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
 2. Update the .env file with your correct local information 
   - username: `labber` 
@@ -25,7 +31,13 @@ The following steps are only for _one_ of the group members to perform.
   - Check the db folder to see what gets created and seeded in the SDB
 7. Run the server: `npm run local`
   - Note: nodemon is used, so you should not have to restart your server
-8. Visit `http://localhost:8080/`
+8. Visit `http://localhost:8081/`
+
+React-Front-End
+
+In other terminal, cd into react-front-end. 
+1. Run npm install or yarn to install the dependencies. 
+2. Then run npm start or yarn start, and go to localhost:3002 in your browser.
 
 ## Warnings & Tips
 
