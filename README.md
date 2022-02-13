@@ -14,9 +14,22 @@ The following steps are only for _one_ of the group members to perform.
 
 ## Getting Started
 
-Express-Back-End
+Database Pg Setup
+
+Type the following command on your vagrant machine to connect to your postgres server:
+
+psql -U vagrant -d template1
+
+Run the following SQL commands to create the necessary objects in the DB:
+
+CREATE ROLE labber WITH LOGIN password 'labber';
+CREATE DATABASE finals OWNER labber;
+
+Setting up the servers
 
 You need TWO terminal windows/tabs for this (or some other plan for running two Node processes).
+
+Express-Back-End
 
 In one terminal for express-back-end, cd to the express-back-end folder and follow these instructions:
 
@@ -24,7 +37,7 @@ In one terminal for express-back-end, cd to the express-back-end folder and foll
 2. Update the .env file with your correct local information 
   - username: `labber` 
   - password: `labber` 
-  - database: `midterm`
+  - database: `finals`
 3. Install dependencies: `npm i`
 4. Fix to binaries for sass: `npm rebuild node-sass`
 5. Reset database: `npm run db:reset`
