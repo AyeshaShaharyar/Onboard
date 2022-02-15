@@ -1,6 +1,7 @@
 import React from "react";
 import Dashboard from "./components/Dashboard";
 
+
 import {
   BrowserRouter,
   Routes,
@@ -13,10 +14,7 @@ const App = function(){
   return (
     <BrowserRouter>
     <Routes>
-     
-        <Route index element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-     
+        <Route index element={<Dashboard />} />
     </Routes>
   </BrowserRouter>
   )

@@ -1,9 +1,16 @@
 import React from "react";
+import DateToday from "./Date";
+import ProgressBar from "./ProgressBar";
 
-const Dashboard = function(){
+const Dashboard = function () {
+ 
   return (
-  <h1>It is Dashboard</h1>
-  )
-}
+    <div>
+      <h1>Welcome Onboard!</h1>
+       <DateToday />
+       <ProgressBar />
+    </div>
+  );
+};
 
 export default Dashboard;
