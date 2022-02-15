@@ -1,6 +1,6 @@
 /*
- * All routes for Users are defined here
- * Since this file is loaded in server.js into api/users,
+ * All routes for Employees are defined here
+ * Since this file is loaded in server.js into api/employees,
  *   these routes are mounted onto /users
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
@@ -10,10 +10,10 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
+    db.query(`SELECT * FROM employees;`)
       .then(data => {
-        const users = data.rows;
-        res.json({ users });
+        const employees = data.rows;
+        res.json({ employees });
       })
       .catch(err => {
         res
@@ -49,8 +49,6 @@ module.exports = (db) => {
           .status(500)
           .json({ error: err.message });
       });
-    });
+  });
   return router;
-
-
 };
