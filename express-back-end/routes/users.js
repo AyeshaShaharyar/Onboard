@@ -21,5 +21,18 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+  router.get("/tasks/:employee_id", (req, res) => {
+    const { employee_id} = req.params;
+    db.query(`SELECT * FROM tasks_employee WHERE employee_id = $1 AND completion = true;`, [ employee_id])
+      .then(data => {
+        const users = data.rows;
+        res.json({ users });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
   return router;
 };
