@@ -1,41 +1,40 @@
 import React, { useState, useEffect } from "react";
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Sidebar from "./Sidebar";
-// import TasksTable from "./TasksTable";
 import axios from "axios"
-const Tasks = function(){
+import Sidebar from "./Sidebar";
+import TasksTable from "./TasksTable";
 
-  const [task, setTask] = useState("h1")
+export default function Tasks() {
 
-    // "/tasks/:task_id/:employee_id"
-  useEffect(()=>{
-    const URL = "api/users/tasks/3"
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const URL = "/api/employees/3/tasks"
     try {
       axios.get(URL)
-      .then((response)=>{
-          setTask(response.data.employeesTask)
+        .then((response) => {
           console.log(response.data);
-      })
+          setTasks(response.data.employeesTasks)
+        })
     } catch (error) {
 
     }
-  })
+  }, []);
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-        <Sidebar/>
-      <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
-        <h1>{task}</h1>
-        <h1>It is Task</h1>
-      {/* <TasksTable /> */}
-      
-      
-      </Box>
-    </Box>
- 
-  )
-}
+      <Box sx={{ display: 'flex' }}>
+    <CssBaseline />
+    <Sidebar />
+    <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
 
-export default Tasks;
+     
+    <TasksTable
+      tasks={tasks}
+    />
+
+    </Box>
+  </Box>
+
+)
+};

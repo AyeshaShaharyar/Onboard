@@ -1,5 +1,4 @@
-import React from "react";
-import Dashboard from "./components/Dashboard";
+
 
 
 import {
@@ -8,15 +7,22 @@ import {
   Route
 } from "react-router-dom";
 
-import Home from "./components/Home";
+// import Home from "./components/Home";
+import Dashboard from "./components/Dashboard";
+import Tasks from "./components/Tasks";
+import Settings from "./components/Settings";
+import About from "./components/About";
+import React from "react";
 
-const App = function(){
+export default function App (){
   return (
     <BrowserRouter>
-    <Routes>
+      <Routes>
         <Route index element={<Dashboard />} />
-    </Routes>
-  </BrowserRouter>
+        <Route path="/tasks" element={<Tasks />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
-export default App;
