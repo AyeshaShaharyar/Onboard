@@ -1,5 +1,4 @@
-
-
+import React from "react";
 import {
   BrowserRouter,
   Routes,
@@ -11,7 +10,7 @@ import Dashboard from "./components/Dashboard";
 import Tasks from "./components/Tasks";
 import Settings from "./components/Settings";
 import About from "./components/About";
-import React from "react";
+import TaskOfDay from "./components/TaskOfDay";
 
 export default function App (){
   return (
@@ -21,6 +20,7 @@ export default function App (){
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/about" element={<About />} />
+        <Route path= "/task/:id" element={<TaskOfDay />} />
       </Routes>
     </BrowserRouter>
   )
