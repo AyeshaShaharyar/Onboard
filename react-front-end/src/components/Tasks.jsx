@@ -14,7 +14,7 @@ export default function Tasks() {
     try {
       axios.get(URL)
         .then((response) => {
-          
+          console.log(response.data);
           setTasks(response.data.employeesTasks)
         })
     } catch (error) {

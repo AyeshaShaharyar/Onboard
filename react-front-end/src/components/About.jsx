@@ -32,11 +32,22 @@ export default function About () {
       <CssBaseline />
         <Sidebar/>
       <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
+<<<<<<< HEAD
         <div className="App">
           <h1>VIDEO</h1>
           <YoutubeEmbed embedId="2p9sIugbIwo" />
         </div>
     </Box>
+=======
+        
+        <h1>It is About</h1>
+        
+        <Video/>
+        
+
+        
+      </Box>
+>>>>>>> master
     </Box>
  
   )

@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 // import Home from "./components/Home";
-import Dashboard from "./components/DashLuciana";
+import Dashboard from "./components/Dashboard";
 import Tasks from "./components/Tasks";
 import Settings from "./components/Settings";
 import About from "./components/About";
@@ -25,4 +25,3 @@ export default function App (){
     </BrowserRouter>
   )
 }
-
