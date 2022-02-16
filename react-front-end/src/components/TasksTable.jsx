@@ -6,14 +6,17 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 import { Link } from "react-router-dom";
+import TaskOfDay from './TaskOfDay';
 
 export default function TasksTable(props) {
   const tasks = props.tasks;
   // const descriptionp = props.description;
   // const dueDatep = props.dueDate;
   // const completionp = props.completion;
-  
+  // taskOfDay={task}
   const table = tasks.map((task) => {
 return (
 
@@ -22,19 +25,41 @@ return (
     key={task.name}
     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
   >
+  
     <TableCell component="th" scope="row">
-      {task.name}
+    {task.completion ? 
+      <Chip label={task.name}
+        component="a"
+        href= {`/task/${task.id}`}
+        style={{ textDecoration: 'none' }}
+        variant="outlined"
+        color="success"
+        clickable/> : <Chip label={task.name}
+        component="a"
+        href= {`/task/${task.id}`}
+        style={{ textDecoration: 'none' }}
+        variant="outlined"
+        color="info"
+        clickable/>
+        }
+        
     </TableCell>
     <TableCell align="left">{task.description}</TableCell>
     <TableCell align="center">{task.due_date}</TableCell>
-    <TableCell align="center">{task.completion}</TableCell>
-  </TableRow>
+    <TableCell align="center"> 
 
- 
+      {task.completion ? 
+      <Chip label="COMPLETED" component="a" color="success"/> : <Chip label="PENDING" component="a" color="info"/>}
+      
+      </TableCell>
+    
+  </TableRow>
+  
    )
   })
   return (
-    <TableContainer component={Paper}>
+    <div><h1>Tasks</h1>
+    <TableContainer component={Paper}>  
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -49,5 +74,6 @@ return (
         </TableBody>
       </Table>
     </TableContainer>
+    </div>
   );
 }
