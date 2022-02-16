@@ -26,7 +26,7 @@ module.exports = (db) => {
     const employeeId = req.params.employee_id
     const completion = req.query.completion
 
-    let query = `SELECT name, due_date, tasks_employee.id, completion FROM tasks_employee
+    let query = `SELECT name, description, due_date, tasks_employee.id, completion FROM tasks_employee
     JOIN tasks ON task_id = tasks.id
     JOIN employees ON employee_id = employees.id
     WHERE employee_id = $1`;
@@ -36,12 +36,12 @@ module.exports = (db) => {
     }
     query = query + `;`
 
-    console.log(query)
-    db.query(query, [employeeId])
+        db.query(query, [employeeId])
 
       .then(data => {
 
         const employeesTasks = data.rows;
+        console.log(employeesTasks)
         res.json({ employeesTasks });
       })
       .catch(err => {

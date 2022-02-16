@@ -22,35 +22,6 @@ module.exports = (db) => {
       });
   });
 
-  router.get("/:employee_id/tasks", (req, res) => {
-    const employeeId = req.params.employee_id
-    const completion = req.query.completion
-
-    let query = `SELECT name, due_date, tasks_employee.id, completion FROM tasks_employee
-    JOIN tasks ON task_id = tasks.id
-    JOIN employees ON employee_id = employees.id
-    WHERE employee_id = $1`;
-
-    if (completion) {
-      query = query + ` AND completion = ${completion}`
-    }
-    query = query + `;`
-
-    console.log(query)
-    db.query(query, [employeeId])
-
-      .then(data => {
-
-        const employeesTasks = data.rows;
-        res.json({ employeesTasks });
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      });
-    });
   return router;
-
 
 };
