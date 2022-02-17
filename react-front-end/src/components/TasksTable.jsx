@@ -30,18 +30,24 @@ export default function TasksTable(props) {
               style={{ textDecoration: 'none' }}
               variant="contained"
               color="success"
-              
-              clickable 
-              sx={{ '&:hover': { color: '#4caf50', backgroundColor:"white"
-               }, }}/> : <Chip label={task.name}
+
+              clickable
+              sx={{
+                '&:hover': {
+                  color: '#4caf50', backgroundColor: "white"
+                },
+              }} /> : <Chip label={task.name}
                 component="a"
                 href={`/task/${task.id}`}
                 style={{ textDecoration: 'none' }}
                 variant="contained"
                 color="info"
-                clickable  sx={ 
-                  { '&:hover': { color: "#03a9f4" , backgroundColor:'white'
-              }, }}/>
+                clickable sx={
+                  {
+                    '&:hover': {
+                      color: "#03a9f4", backgroundColor: 'white'
+                    },
+                  }} />
           }
 
         </TableCell>
@@ -68,7 +74,7 @@ export default function TasksTable(props) {
               <TableCell align="left">Description</TableCell>
               <TableCell align="center">Due Date</TableCell>
               <TableCell align="center">Status</TableCell>
-          
+
             </TableRow>
           </TableHead>
           <TableBody>

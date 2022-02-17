@@ -27,46 +27,46 @@ export default function Sidebar() {
       variant="permanent"
       anchor="left"
     >
-    <Toolbar/> 
-    
-    <img src={onboard} alt="Onboard" />
-    <Divider />
-    <List>
-      <ListItem button key={'Dashboard'}>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'Dashboard'} />
-        </Link>
-      </ListItem>
-      
-      <ListItem button key={'Tasks'}>
-        <Link to="/tasks" style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'Tasks'} />
-        </Link>
-      </ListItem>
-          
-      <ListItem button key={'About'}>
-        <Link to="/about" style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'About'} />
-        </Link>
-      </ListItem>
-               
-    </List>
+      <Toolbar />
 
-    <Divider />
-    <List>
-      <ListItem button key={'Settings'}>
-        <Link to="/settings" style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'Settings'} />
-        </Link>
-      </ListItem>
-    
-      <ListItem button key={'Logout'}>
-        <Link to="/logout" style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'Logout'} />
-        </Link>
-      </ListItem>
+      <img src={onboard} alt="Onboard" />
+      <Divider />
+      <List>
+        <ListItem button key={'Dashboard'}>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'Dashboard'} />
+          </Link>
+        </ListItem>
 
-    </List>
-    </Drawer>      
+        <ListItem button key={'Tasks'}>
+          <Link to="/tasks" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'Tasks'} />
+          </Link>
+        </ListItem>
+
+        <ListItem button key={'About'}>
+          <Link to="/about" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'About'} />
+          </Link>
+        </ListItem>
+
+      </List>
+
+      <Divider />
+      <List>
+        <ListItem button key={'Settings'}>
+          <Link to="/settings" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'Settings'} />
+          </Link>
+        </ListItem>
+
+        <ListItem button key={'Logout'}>
+          <Link to="/logout" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'Logout'} />
+          </Link>
+        </ListItem>
+
+      </List>
+    </Drawer>
   );
 }
