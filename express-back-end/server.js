@@ -57,6 +57,7 @@ app.get('/api/data', (req, res) => res.json({
   message: "Seems to work!",
 }));
 
+
 app.get("/", (req, res) => {
   res.render("index");
 });
