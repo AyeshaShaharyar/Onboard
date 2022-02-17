@@ -6,6 +6,9 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import { Link } from "react-router-dom";
+// import logo from "./logo.png";
+import onboard from "./onboard.png"
+
 
 
 const drawerWidth = 240;
@@ -24,7 +27,9 @@ export default function Sidebar() {
       variant="permanent"
       anchor="left"
     >
-    <Toolbar /> ONBOARD
+    <Toolbar/> 
+    
+    <img src={onboard} alt="Onboard" />
     <Divider />
     <List>
       <ListItem button key={'Dashboard'}>
