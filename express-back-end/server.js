@@ -7,9 +7,7 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const bodyParser = require('body-parser');
-
-
+const bodyparser = require("body-parser");
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -24,6 +22,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyparser.json());
 
 app.use(
   "/styles",

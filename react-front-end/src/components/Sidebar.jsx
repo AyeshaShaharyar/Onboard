@@ -11,6 +11,9 @@ import ContactPageTwoToneIcon from '@mui/icons-material/ContactPageTwoTone';
 import SettingsApplicationsTwoToneIcon from '@mui/icons-material/SettingsApplicationsTwoTone';
 import LogoutTwoToneIcon from '@mui/icons-material/LogoutTwoTone';
 import { Link } from "react-router-dom";
+// import logo from "./logo.png";
+import onboard from "./onboard.png"
+
 
 
 const drawerWidth = 240;
@@ -29,50 +32,46 @@ export default function Sidebar() {
       variant="permanent"
       anchor="left"
     >
-    <Toolbar /> ONBOARD
-    <Divider />
-    <List>
-   
-      <ListItem button key={'Dashboard'}>
-      <DashboardCustomizeTwoToneIcon/>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'Dashboard'} />
-        </Link>
-      </ListItem>
-      
-      <ListItem button key={'Tasks'}>
-      <AssignmentTwoToneIcon />
-        <Link to="/tasks" style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'Tasks'} />
-        </Link>
-      </ListItem>
-          
-      <ListItem button key={'About'}>
-      <ContactPageTwoToneIcon/>
-        <Link to="/about" style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'About'} />
-        </Link>
-      </ListItem>
-               
-    </List>
+      <Toolbar />
 
-    <Divider />
-    <List>
-      <ListItem button key={'Settings'}>
-      <SettingsApplicationsTwoToneIcon/>
-        <Link to="/settings" style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'Settings'} />
-        </Link>
-      </ListItem>
-    
-      <ListItem button key={'Logout'}>
-      <LogoutTwoToneIcon/>
-        <Link to="/logout"  style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'Logout'} />
-        </Link>
-      </ListItem>
+      <img src={onboard} alt="Onboard" />
+      <Divider />
+      <List>
+        <ListItem button key={'Dashboard'}>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'Dashboard'} />
+          </Link>
+        </ListItem>
 
-    </List>
-    </Drawer>      
+        <ListItem button key={'Tasks'}>
+          <Link to="/tasks" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'Tasks'} />
+          </Link>
+        </ListItem>
+
+        <ListItem button key={'About'}>
+          <Link to="/about" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'About'} />
+          </Link>
+        </ListItem>
+
+      </List>
+
+      <Divider />
+      <List>
+        <ListItem button key={'Settings'}>
+          <Link to="/settings" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'Settings'} />
+          </Link>
+        </ListItem>
+
+        <ListItem button key={'Logout'}>
+          <Link to="/logout" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'Logout'} />
+          </Link>
+        </ListItem>
+
+      </List>
+    </Drawer>
   );
 }

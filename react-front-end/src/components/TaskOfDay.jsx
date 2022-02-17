@@ -3,6 +3,9 @@ import axios from "axios";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Sidebar from "./Sidebar";
+import Video from "./Video";
+import BasicRating from "./BasicRating";
+import RatingDialog from "./RatingDialog";
 import { useParams } from "react-router-dom";
 
 const textarea = {
@@ -11,15 +14,12 @@ const textarea = {
   padding: "12px 20px",
   border: "none",
   fontFamily: "Times New Roman, Times, serif",
-  fontSize:"20px",
-  resize:" none",
+  fontSize: "20px",
+  resize: " none",
 }
 
-
 export default function TaskOfDay(props) {
-
-
-
+  const completion = props.completion
   const { id } = useParams();
 
   const [task, setTask] = useState([]);
@@ -36,30 +36,32 @@ export default function TaskOfDay(props) {
 
   const taskToSubmit = task.map((taskOfDay) => {
     return (
+
       <div className="App">
-        <h1>Task - {taskOfDay.name}</h1>
+        <h1>Task - {taskOfDay.name}</h1><h3> <BasicRating rating={taskOfDay.rating} /> </h3>
         <h2>{taskOfDay.description}</h2>
+        { taskOfDay.image ? <img width="80%" height="70%" src={taskOfDay.image} alt="img" /> : null }
+
+        { taskOfDay.content ? <textarea style={textarea}>{taskOfDay.content}</textarea> : 
         
-        <img  width="80%" height="70%"src={taskOfDay.image} alt="img"  />
-      
-          <textarea style={textarea}>{taskOfDay.content}</textarea>
-        
-        <p>To know more about this topic follow the <a href={taskOfDay.url}> link.</a></p>
-        
+        <p>To know more about this topic follow the <a href={taskOfDay.link}> link</a>. Complete all the sections.</p> }
+
+        <h2>{taskOfDay.url ? <Video url={taskOfDay.url}/> : null }</h2>
+        <RatingDialog id={id} completion={taskOfDay.completion} />
       </div>
-    );
-  });
+    )
+  })
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <Sidebar />
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
-      >
+      <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
+
         {taskToSubmit}
+
       </Box>
     </Box>
+
   );
 }
