@@ -10,8 +10,8 @@
 -- INSERT INTO tasks (name, description, due_date, url, zoom)
 -- VALUES ('Day 5','task5 task5 task5', 5, null, null);
 
-INSERT INTO tasks (name, description, content, due_date, url, zoom)
-VALUES ('Day 1','Communication Skills for Workplace Success','Communication is the key, and being a strong communicator gets you far in life. Though not everyone is a born communicator, there are proven ways to improve your communication skills. Here are 10 ways:-
+INSERT INTO tasks (name, description, image, content, due_date, url, zoom)
+VALUES ('Day 1','Communication Skills for Workplace Success','https://static.helpjuice.com/helpjuice_production/uploads/upload/image/4752/direct/1576236732566-1574728882735-Employee%20Training%20Development.jpg', 'Communication is the key, and being a strong communicator gets you far in life. Though not everyone is a born communicator, there are proven ways to improve your communication skills. Here are 10 ways:-
 
 Listen Well
 
@@ -55,8 +55,8 @@ Directly communicate with the person you mean to. In many organizations, communi
 
 Communication is something that has a substantial impact on our personal and professional life. It has to be taken seriously. And always remember some of the most successful and happy people in life are great communicators.', '5 days', 'https://www.youtube.com/watch?v=knUEdy-kOIQ&t=275s&ab_channel=AdrianaGirdler', null);
 
-INSERT INTO tasks (name, description,content, due_date, url, zoom)
-VALUES ('Day 2','10 Ways to Deliver Consistently Great Customer Service', 'You may have a fantastic product, but if your customer service is unhelpful, unreliable, or just plain hard to get in touch with, folks will hear about it, and you’ll lose customers over it.
+INSERT INTO tasks (name, description, image, content, due_date, url, zoom)
+VALUES ('Day 2','10 Ways to Deliver Consistently Great Customer Service', 'https://www.corporatecomplianceinsights.com/wp-content/uploads/2018/11/training.jpg', 'You may have a fantastic product, but if your customer service is unhelpful, unreliable, or just plain hard to get in touch with, folks will hear about it, and you’ll lose customers over it.
 
 That’s one big reason why investing in customer service is key to long-term business success.
 
@@ -118,8 +118,8 @@ That said, customers don’t always want to talk to someone to get their problem
 
 Self-service is a scalable, cost-effective way to make customers happy — that’s the thinking that led to Help Scout’s Beacon, which puts help content front and center so customers can find answers right where they are without leaving the page. Then if they’re unable to answer their own question, help from a real person is just a couple clicks away.' , '5 days', 'https://www.helpscout.com/blog/good-customer-service/', null);
 
-INSERT INTO tasks (name, description, content, due_date, url, zoom)
-VALUES ('Day 3','Professional Sales Skills Tips And Techniques', '1. Effective Communication
+INSERT INTO tasks (name, description, image, content, due_date, url, zoom)
+VALUES ('Day 3','Professional Sales Skills Tips And Techniques', 'null', '1. Effective Communication
 The ability to clearly and effectively communicate across mediums is a non-negotiable for salespeople. Between drafting enticing sales emails, nailing presentations, and keeping conversations with buyers of all communication styles flowing, sales professionals must continuously hone their written and verbal communication skills to perform well in their role.
 
 2. Product Expertise
@@ -167,13 +167,11 @@ If you think social media can only be leveraged by the marketing department, thi
 
 It’s worth noting, however, that social selling is only effective when done properly. That means reps shouldn’t flock to social media spamming user inboxes with unsolicited messages and flooding their timelines with promotional posts. Instead, reps should start by optimizing their professional social media profiles to attract potential customers, and take a thoughtful approach to outreach on the appropriate platforms at the appropriate times.' , '5 days', 'https://www.youtube.com/watch?v=yI3DmqEGXfk&ab_channel=TEDxTalks', null);
 
-INSERT INTO tasks (name, description, content, due_date, url, zoom)
-VALUES ('Day 4','Successful Negotiation: Essential Strategies and Skills', 'Follow the link below. Complete all the sections.
+INSERT INTO tasks (name, description, image, content, due_date, url, zoom)
+VALUES ('Day 4','Successful Negotiation: Essential Strategies and Skills', 'https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_fddcc2dee5ca86277467c0ac6ca5005b/coursera-for-business.png', 'Follow the link below. Complete all the sections.' ,'5 days', 'https://www.coursera.org/learn/negotiation-skills', null);
 
-https://www.coursera.org/learn/negotiation-skills' ,'5 days', 'https://www.coursera.org/learn/negotiation-skills', null);
-
-INSERT INTO tasks (name, description, content, due_date, url, zoom)
-VALUES ('Day 5','5 Ways To Improve Employee Development At Your Company', 'Every company has it’s own set of priorities to help take it to the next level, and knowing which initiatives will make the greatest impact can be tough. But what makes a business prosperous and truly differentiates one organization from the rest is not the product it sells or the service it offers, it’s the people within it. And what people at your org  deeply crave are more opportunities for employee development.
+INSERT INTO tasks (name, description,image,  content, due_date, url, zoom)
+VALUES ('Day 5','5 Ways To Improve Employee Development At Your Company', 'http://www.tekshapers.com/uploads/blog_image/TrainingDevelopment.jpg', 'Every company has it’s own set of priorities to help take it to the next level, and knowing which initiatives will make the greatest impact can be tough. But what makes a business prosperous and truly differentiates one organization from the rest is not the product it sells or the service it offers, it’s the people within it. And what people at your org  deeply crave are more opportunities for employee development.
 
 Taking care of your employees doesn’t simply mean offering fun happy hours or paying for lunch once a week. Each person, no matter their level or where they choose to work, wants to feel genuinely cared for. An impactful way to do this is through a commitment to support employee development (professional advancement and personal growth).
 

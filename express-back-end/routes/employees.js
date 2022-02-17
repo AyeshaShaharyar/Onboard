@@ -56,7 +56,7 @@ module.exports = (db) => {
     const employeeId = req.params.employee_id
     const taskId = req.params.task_id
 
-    let query = `SELECT name, description, due_date, tasks_employee.id, tasks.id, url, completion FROM tasks_employee
+    let query = `SELECT name, description, image, content, due_date, tasks_employee.id, tasks.id, url, completion FROM tasks_employee
     JOIN tasks ON task_id = tasks.id
     JOIN employees ON employee_id = employees.id
     WHERE employee_id = $1 AND task_id = $2;`;
@@ -75,6 +75,23 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+  router.get("/:employee_id/tasks", (req, res) => {
+    const { employee_id} = req.params;
+    db.query(`SELECT employees.first_name, employees.last_name, description, tasks_employee.id, tasks.id FROM tasks_employee
+    JOIN tasks ON task_id = tasks.id
+    JOIN employees ON employee_id = employees.id
+    WHERE employee_id = $1 AND completion = false;`, [ employee_id])
+      .then(data => {
+        const users = data.rows;
+        res.json({ users });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
 
   return router;
 };
