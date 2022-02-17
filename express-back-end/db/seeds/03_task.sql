@@ -1,33 +1,7 @@
 -- Task table seeds
--- INSERT INTO tasks (name, description, due_date, url, zoom)
--- VALUES ('Day 1','task1 task1 task1', 1, 'https://youtu.be/BGy2GxkN5Dk', null);
--- INSERT INTO tasks (name, description, due_date, url, zoom)
--- VALUES ('Day 2','task2 task2 task2', 2, null, null);
--- INSERT INTO tasks (name, description, due_date, url, zoom)
--- VALUES ('Day 3','task3 task3 task3', 3, null, null);
--- INSERT INTO tasks (name, description, due_date, url, zoom)
--- VALUES ('Day 4','task4 task4 task4', 4, null, null);
--- INSERT INTO tasks (name, description, due_date, url, zoom)
--- VALUES ('Day 5','task5 task5 task5', 5, null, null);
 
-INSERT INTO tasks (name, description, due_date, url, zoom)
-VALUES ('Day 1','Communication Skills for Workplace Success', '5 days', 'https://www.youtube.com/embed/knUEdy-kOIQ', null);
--- INSERT INTO tasks (name, description, due_date, url, zoom)
--- VALUES ('Day 2','10 Ways to Deliver Consistently Great Customer Service', '5 days', 'https://www.helpscout.com/blog/good-customer-service/', null);
-INSERT INTO tasks (name, description, due_date, url, zoom)
-VALUES ('Day 2','10 Ways to Deliver Consistently Great Customer Service', '5 days', 'https://www.youtube.com/embed/knUEdy-kOIQ', null);
-INSERT INTO tasks (name, description, due_date, url, zoom)
-VALUES ('Day 3','Professional Sales Skills Tips And Techniques', '5 days','https://www.youtube.com/embed/yI3DmqEGXfk', null);
--- INSERT INTO tasks (name, description, due_date, url, zoom)
--- VALUES ('Day 4','Successful Negotiation: Essential Strategies and Skills', '5 days', 'https://www.coursera.org/learn/negotiation-skills', null);
-INSERT INTO tasks (name, description, due_date, url, zoom)
-VALUES ('Day 4','Successful Negotiation: Essential Strategies and Skills', '5 days', 'https://www.youtube.com/embed/yI3DmqEGXfk', null);
--- INSERT INTO tasks (name, description, due_date, url, zoom)
--- VALUES ('Day 5','5 Ways To Improve Employee Development At Your Company', '5 days', 'https://www.15five.com/blog/how-do-i-improve-employee-development/', null);
-INSERT INTO tasks (name, description, due_date, url, zoom)
-VALUES ('Day 5','5 Ways To Improve Employee Development At Your Company', '5 days', 'https://www.youtube.com/embed/yI3DmqEGXfk', null);
-INSERT INTO tasks (name, description, content, due_date, url, zoom)
-VALUES ('Day 1','Communication Skills for Workplace Success','Communication is the key, and being a strong communicator gets you far in life. Though not everyone is a born communicator, there are proven ways to improve your communication skills. Here are 10 ways:-
+INSERT INTO tasks (name, description, image, content, due_date, link, url, zoom)
+VALUES ('Day 1','Communication Skills for Workplace Success','https://static.helpjuice.com/helpjuice_production/uploads/upload/image/4752/direct/1576236732566-1574728882735-Employee%20Training%20Development.jpg','Communication is the key, and being a strong communicator gets you far in life. Though not everyone is a born communicator, there are proven ways to improve your communication skills. Here are 10 ways:-
 
 Listen Well
 
@@ -69,10 +43,10 @@ Speak Directly
 
 Directly communicate with the person you mean to. In many organizations, communication channels are created with many needless people passing on the messages. As we know thanks to the Chinese whispers game, this does not work when there are too many people. Just communicate directly with the person you mean to.
 
-Communication is something that has a substantial impact on our personal and professional life. It has to be taken seriously. And always remember some of the most successful and happy people in life are great communicators.', '5 days', 'https://www.youtube.com/watch?v=knUEdy-kOIQ&t=275s&ab_channel=AdrianaGirdler', null);
+Communication is something that has a substantial impact on our personal and professional life. It has to be taken seriously. And always remember some of the most successful and happy people in life are great communicators.', '5 days', null, 'https://www.youtube.com/embed/knUEdy-kOIQ', null);
 
-INSERT INTO tasks (name, description,content, due_date, url, zoom)
-VALUES ('Day 2','10 Ways to Deliver Consistently Great Customer Service', 'You may have a fantastic product, but if your customer service is unhelpful, unreliable, or just plain hard to get in touch with, folks will hear about it, and you’ll lose customers over it.
+INSERT INTO tasks (name, description, image, content, due_date, link, url, zoom)
+VALUES ('Day 2','10 Ways to Deliver Consistently Great Customer Service', 'https://www.corporatecomplianceinsights.com/wp-content/uploads/2018/11/training.jpg', 'You may have a fantastic product, but if your customer service is unhelpful, unreliable, or just plain hard to get in touch with, folks will hear about it, and you’ll lose customers over it.
 
 That’s one big reason why investing in customer service is key to long-term business success.
 
@@ -132,10 +106,10 @@ Do you know not only your customers’ names, but also their birthdays? How abou
 6. Help customers help themselves
 That said, customers don’t always want to talk to someone to get their problem solved — often, they want to quickly resolve their issue themselves. Among consumers, 81% attempt to take care of matters themselves before reaching out to a live representative. Further research shows that 71% want the ability to solve most customer service issues on their own.
 
-Self-service is a scalable, cost-effective way to make customers happy — that’s the thinking that led to Help Scout’s Beacon, which puts help content front and center so customers can find answers right where they are without leaving the page. Then if they’re unable to answer their own question, help from a real person is just a couple clicks away.' , '5 days', 'https://www.helpscout.com/blog/good-customer-service/', null);
+Self-service is a scalable, cost-effective way to make customers happy — that’s the thinking that led to Help Scout’s Beacon, which puts help content front and center so customers can find answers right where they are without leaving the page. Then if they’re unable to answer their own question, help from a real person is just a couple clicks away.' , '5 days', null, null , null);
 
-INSERT INTO tasks (name, description, content, due_date, url, zoom)
-VALUES ('Day 3','Professional Sales Skills Tips And Techniques', '1. Effective Communication
+INSERT INTO tasks (name, description, image, content, due_date, link, url, zoom)
+VALUES ('Day 3','Professional Sales Skills Tips And Techniques', null, '1. Effective Communication
 The ability to clearly and effectively communicate across mediums is a non-negotiable for salespeople. Between drafting enticing sales emails, nailing presentations, and keeping conversations with buyers of all communication styles flowing, sales professionals must continuously hone their written and verbal communication skills to perform well in their role.
 
 2. Product Expertise
@@ -181,15 +155,13 @@ Whether a rep needs to work with their marketing organization to ensure a smooth
 10. Social Selling
 If you think social media can only be leveraged by the marketing department, think again. Social selling, or researching and connecting with potential buyers using social media platforms, is an important skill for sales reps.
 
-It’s worth noting, however, that social selling is only effective when done properly. That means reps shouldn’t flock to social media spamming user inboxes with unsolicited messages and flooding their timelines with promotional posts. Instead, reps should start by optimizing their professional social media profiles to attract potential customers, and take a thoughtful approach to outreach on the appropriate platforms at the appropriate times.' , '5 days', 'https://www.youtube.com/watch?v=yI3DmqEGXfk&ab_channel=TEDxTalks', null);
+It’s worth noting, however, that social selling is only effective when done properly. That means reps shouldn’t flock to social media spamming user inboxes with unsolicited messages and flooding their timelines with promotional posts. Instead, reps should start by optimizing their professional social media profiles to attract potential customers, and take a thoughtful approach to outreach on the appropriate platforms at the appropriate times.' , '5 days', null, 'https://www.youtube.com/embed/yI3DmqEGXfk', null);
 
-INSERT INTO tasks (name, description, content, due_date, url, zoom)
-VALUES ('Day 4','Successful Negotiation: Essential Strategies and Skills', 'Follow the link below. Complete all the sections.
+INSERT INTO tasks (name, description, image, content, due_date, link, url, zoom)
+VALUES ('Day 4','Successful Negotiation: Essential Strategies and Skills', 'https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_fddcc2dee5ca86277467c0ac6ca5005b/coursera-for-business.png', null ,'5 days', 'https://www.coursera.org/learn/negotiation-skills', null, null);
 
-https://www.coursera.org/learn/negotiation-skills' ,'5 days', 'https://www.coursera.org/learn/negotiation-skills', null);
-
-INSERT INTO tasks (name, description, content, due_date, url, zoom)
-VALUES ('Day 5','5 Ways To Improve Employee Development At Your Company', 'Every company has it’s own set of priorities to help take it to the next level, and knowing which initiatives will make the greatest impact can be tough. But what makes a business prosperous and truly differentiates one organization from the rest is not the product it sells or the service it offers, it’s the people within it. And what people at your org  deeply crave are more opportunities for employee development.
+INSERT INTO tasks (name, description, image, content, due_date, link, url, zoom)
+VALUES ('Day 5','5 Ways To Improve Employee Development At Your Company', 'http://www.tekshapers.com/uploads/blog_image/TrainingDevelopment.jpg','Every company has it’s own set of priorities to help take it to the next level, and knowing which initiatives will make the greatest impact can be tough. But what makes a business prosperous and truly differentiates one organization from the rest is not the product it sells or the service it offers, it’s the people within it. And what people at your org  deeply crave are more opportunities for employee development.
 
 Taking care of your employees doesn’t simply mean offering fun happy hours or paying for lunch once a week. Each person, no matter their level or where they choose to work, wants to feel genuinely cared for. An impactful way to do this is through a commitment to support employee development (professional advancement and personal growth).
 
@@ -235,4 +207,4 @@ Books and seminars don’t just have to be about business. You can provide conti
 Physical health
 Encouraging your people to step away from their desks when the workday is complete and allowing them to practice more self care shows that you don’t just depend on the skills on their job description, but you care about them as people.
 
-When employees are given the tools to do their jobs well and train to advance in their careers, they are more likely to feel inspired to do their best work. And your reputation for stellar employee development might just encourage the best and brightest candidates to join your team.' , '5 days', 'https://www.15five.com/blog/how-do-i-improve-employee-development/', null);
+When employees are given the tools to do their jobs well and train to advance in their careers, they are more likely to feel inspired to do their best work. And your reputation for stellar employee development might just encourage the best and brightest candidates to join your team.' , '5 days', null, null, null);
