@@ -10,7 +10,6 @@
 -- INSERT INTO tasks (name, description, due_date, url, zoom)
 -- VALUES ('Day 5','task5 task5 task5', 5, null, null);
 
-<<<<<<< HEAD
 INSERT INTO tasks (name, description, due_date, url, zoom)
 VALUES ('Day 1','Communication Skills for Workplace Success', '5 days', 'https://www.youtube.com/embed/knUEdy-kOIQ', null);
 -- INSERT INTO tasks (name, description, due_date, url, zoom)
@@ -27,7 +26,6 @@ VALUES ('Day 4','Successful Negotiation: Essential Strategies and Skills', '5 da
 -- VALUES ('Day 5','5 Ways To Improve Employee Development At Your Company', '5 days', 'https://www.15five.com/blog/how-do-i-improve-employee-development/', null);
 INSERT INTO tasks (name, description, due_date, url, zoom)
 VALUES ('Day 5','5 Ways To Improve Employee Development At Your Company', '5 days', 'https://www.youtube.com/embed/yI3DmqEGXfk', null);
-=======
 INSERT INTO tasks (name, description, content, due_date, url, zoom)
 VALUES ('Day 1','Communication Skills for Workplace Success','Communication is the key, and being a strong communicator gets you far in life. Though not everyone is a born communicator, there are proven ways to improve your communication skills. Here are 10 ways:-
 
@@ -238,4 +236,3 @@ Physical health
 Encouraging your people to step away from their desks when the workday is complete and allowing them to practice more self care shows that you don’t just depend on the skills on their job description, but you care about them as people.
 
 When employees are given the tools to do their jobs well and train to advance in their careers, they are more likely to feel inspired to do their best work. And your reputation for stellar employee development might just encourage the best and brightest candidates to join your team.' , '5 days', 'https://www.15five.com/blog/how-do-i-improve-employee-development/', null);
->>>>>>> 6bc35fa82543b20ece87c1ad3cb248bc037815f0
