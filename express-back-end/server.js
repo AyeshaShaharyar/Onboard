@@ -7,6 +7,7 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const bodyparser = require("body-parser");
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -21,6 +22,7 @@ app.use(morgan("dev"));
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyparser.json());
 
 app.use(
   "/styles",
@@ -54,6 +56,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.get('/api/data', (req, res) => res.json({
   message: "Seems to work!",
 }));
+
 
 app.get("/", (req, res) => {
   res.render("index");
