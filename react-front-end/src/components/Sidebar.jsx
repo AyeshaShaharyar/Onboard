@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
-import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
@@ -12,7 +11,6 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import PermDeviceInformationIcon from '@mui/icons-material/PermDeviceInformation';
-import ExitToAppTwoToneIcon from '@mui/icons-material/ExitToAppTwoTone';
 import onboard from "./onboard.png";
 import './styles.css'
 

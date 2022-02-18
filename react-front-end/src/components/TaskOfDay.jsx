@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from 'axios';
-import CssBaseline from '@mui/material/CssBaseline';
 import Sidebar from "./Sidebar";
 import Video from "./Video";
 import BasicRating from "./BasicRating";
 import RatingDialog from "./RatingDialog";
-import { useParams } from "react-router-dom";
 import Divider from '@mui/material/Divider';
-import { Box, Grid, Container, Typography } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
+import { Box, Typography } from "@mui/material";
 
 const textarea = {
   width: '100%',
@@ -26,16 +26,13 @@ export default function TaskOfDay(props) {
   const [task, setTask] = useState([]);
 
   useEffect(() => {
-    const URL = `/api/employees/3/tasks/${id}`
+    const URL = `/api/employees/3/tasks/${id}`;
     try {
-      axios.get(URL)
-        .then((response) => {
-          console.log(response.data);
-          setTask(response.data.task)
-        })
-    } catch (error) {
-
-    }
+      axios.get(URL).then((response) => {
+        console.log(response.data);
+        setTask(response.data.task);
+      });
+    } catch (error) {}
   }, []);
 
   const taskToSubmit = task.map((taskOfDay) => {
