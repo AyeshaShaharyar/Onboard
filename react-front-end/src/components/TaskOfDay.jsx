@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from 'axios';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
 import Sidebar from "./Sidebar";
 import Video from "./Video";
 import BasicRating from "./BasicRating";
 import RatingDialog from "./RatingDialog";
-import { useParams } from "react-router-dom";
+import Divider from '@mui/material/Divider';
+import CssBaseline from "@mui/material/CssBaseline";
+import { Box, Typography } from "@mui/material";
 
 const textarea = {
   width: '100%',
@@ -25,31 +26,32 @@ export default function TaskOfDay(props) {
   const [task, setTask] = useState([]);
 
   useEffect(() => {
-    const URL = `/api/employees/3/tasks/${id}`
+    const URL = `/api/employees/3/tasks/${id}`;
     try {
-      axios.get(URL)
-        .then((response) => {
-          console.log(response.data);
-          setTask(response.data.task)
-        })
-    } catch (error) {
-
-    }
+      axios.get(URL).then((response) => {
+        console.log(response.data);
+        setTask(response.data.task);
+      });
+    } catch (error) {}
   }, []);
 
   const taskToSubmit = task.map((taskOfDay) => {
     return (
 
       <div className="App">
-        <h1>Task - {taskOfDay.name}</h1><h3> <BasicRating rating={taskOfDay.rating} /> </h3>
-        <h2>{taskOfDay.description}</h2>
-        { taskOfDay.image ? <img width="80%" height="70%" src={taskOfDay.image} alt="img" /> : null }
+        <Divider textAlign="left" sx={{color: ''}}><Typography variant="h4">Task - {taskOfDay.name} </Typography> </Divider>
+        <div><h2>{taskOfDay.description}</h2>
+        <BasicRating rating={taskOfDay.rating}/> 
+</div>
+        <div className="image">
+          {taskOfDay.image ? <img width="60%" height="40%" src={taskOfDay.image} alt="img" /> : null}
+        </div>
+        {taskOfDay.content ? <textarea style={textarea}>{taskOfDay.content}</textarea> :
 
-        { taskOfDay.content ? <textarea style={textarea}>{taskOfDay.content}</textarea> : 
-        
-        <p>To know more about this topic follow the <a href={taskOfDay.link}> link</a>. Complete all the sections.</p> }
+          <p>To know more about this topic follow the <a href={taskOfDay.link}> link</a>. Complete all the sections.</p>}
 
-        <h2>{taskOfDay.url ? <Video url={taskOfDay.url}/> : null }</h2>
+        <div>{taskOfDay.url ? <Video url={taskOfDay.url} /> : null}</div>
+
         <RatingDialog id={id} completion={taskOfDay.completion} />
       </div>
     )

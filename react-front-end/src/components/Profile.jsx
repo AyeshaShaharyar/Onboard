@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Sidebar from "./Sidebar"
 
-export default function Settings(){
+export default function Profile(){
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -13,7 +13,7 @@ export default function Settings(){
         
         
         
-        <h1>It is Settings</h1>
+        <h1>It is Profile</h1>
       
       
       

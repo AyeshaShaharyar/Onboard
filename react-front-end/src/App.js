@@ -8,19 +8,19 @@ import {
 // import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import Tasks from "./components/Tasks";
-import Settings from "./components/Settings";
+import Profile from "./components/Profile";
 import About from "./components/About";
 import TaskOfDay from "./components/TaskOfDay";
-
 export default function App (){
   return (
     <BrowserRouter>
       <Routes>
         <Route index element={<Dashboard />} />
         <Route path="/tasks" element={<Tasks />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
         <Route path= "/task/:id" element={<TaskOfDay />} />
+
       </Routes>
     </BrowserRouter>
   )

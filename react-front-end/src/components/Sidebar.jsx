@@ -1,14 +1,18 @@
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
-import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import ListItemIcon from "@mui/material/ListItemIcon";
 import { Link } from "react-router-dom";
-// import logo from "./logo.png";
-import onboard from "./onboard.png"
-
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import ListAltIcon from '@mui/icons-material/ListAlt';
+import PermDeviceInformationIcon from '@mui/icons-material/PermDeviceInformation';
+import onboard from "./onboard.png";
+import './styles.css'
 
 
 const drawerWidth = 240;
@@ -27,42 +31,49 @@ export default function Sidebar() {
       variant="permanent"
       anchor="left"
     >
-      <Toolbar />
-
-      <img src={onboard} alt="Onboard" />
+      <img className={'logo'} src={onboard} alt="Onboard" />
       <Divider />
       <List>
         <ListItem button key={'Dashboard'}>
+          <InboxIcon  fontSize="small" sx={{color: '#880e4f'}}/>
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <ListItemText primary={'Dashboard'} />
+            <ListItemIcon>
+
+              <ListItemText sx={{color: '#37474f'}} primary={'Dashboard'} />
+            </ListItemIcon>
           </Link>
         </ListItem>
 
         <ListItem button key={'Tasks'}>
+          <ListAltIcon fontSize="small" sx={{color: '#880e4f'}}/>
           <Link to="/tasks" style={{ textDecoration: 'none' }}>
-            <ListItemText primary={'Tasks'} />
+            <ListItemText sx={{color: '#37474f'}} primary={'Tasks'} />
           </Link>
         </ListItem>
 
         <ListItem button key={'About'}>
+          <PermDeviceInformationIcon fontSize="small" sx={{color: '#880e4f'}}/>
           <Link to="/about" style={{ textDecoration: 'none' }}>
-            <ListItemText primary={'About'} />
+            <ListItemText sx={{color: '#37474f'}} primary={'About'} />
           </Link>
         </ListItem>
 
       </List>
-
+      
       <Divider />
       <List>
-        <ListItem button key={'Settings'}>
-          <Link to="/settings" style={{ textDecoration: 'none' }}>
-            <ListItemText primary={'Settings'} />
+        <ListItem button key={'Profile'}>
+        <AccountBoxIcon fontSize="small" sx={{color: '#880e4f'}}/>
+        <Link to="/profile" style={{ textDecoration: 'none' }}>
+        <ListItemText sx={{color: '#37474f'}} primary={'Profile'} />
           </Link>
         </ListItem>
 
         <ListItem button key={'Logout'}>
+          
+          <ExitToAppIcon fontSize="small" sx={{color: '#880e4f'}}/>
           <Link to="/logout" style={{ textDecoration: 'none' }}>
-            <ListItemText primary={'Logout'} />
+            <ListItemText sx={{color: '#37474f'}} primary={'Logout'} />
           </Link>
         </ListItem>
 

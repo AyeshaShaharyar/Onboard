@@ -27,45 +27,53 @@ import FolderIcon from "@mui/icons-material/Folder";
 export default function InteractiveList(props) {
   const [tasks, setTasks] = useState([]);
   useEffect(() => {
-    const URL = "/api/users/tasks";
+    const URL = "/api/employees/3/tasks";
     try {
       axios.get(URL).then((response) => {
-        setTasks(response.data.users);
-        console.log(response.data.users);
+        setTasks(response.data.employeesTasks);
+        
       });
     } catch (error) {
       console.log(error);
     }
   }, []);
- 
+
   // const descriptionp = props.description;
   // const dueDatep = props.dueDate;
   // const completionp = props.completion;
-  
- 
+  const taskList = tasks.map((task) => {
+    return (
+      <ListItem key={task.id}>
+        <ListItemAvatar>
+          <Avatar>
+            <FolderIcon />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText />
+        {task.description}
+      </ListItem>
+    );
+  });
 
   return (
-    <Card>
-      <CardHeader title="Upcoming Schedule" />
-      <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
-        <Grid item xs={12} md={6}>
-          <List>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <FolderIcon />
-                </Avatar>
-              </ListItemAvatar>
-            {  tasks.map((task) => { return <ListItemText primary="Single-line item" title= {task.description}/>
-              }) }
-            </ListItem>
-          </List>
-        </Grid>
-      </Box>
-    </Card>
+    <Grid
+      container
+      direction="row"
+      justifyContent="flex-start"
+      alignItems="flex-end"
+    >
+      <Card>
+        <CardHeader title="Upcoming Schedule" />
+        <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
+          <Grid item xs={12} md={6} lg={12}>
+            <List>{taskList}</List>
+          </Grid>
+        </Box>
+      </Card>
+    </Grid>
   );
 }
- 
+
 // // ----------------------------------------------------------------------
 
 // // const TASKS = [];
