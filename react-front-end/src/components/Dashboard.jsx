@@ -14,8 +14,6 @@ import {
 } from "../components/_dashboard/app";
 
 
-// ----------------------------------------------------------------------
-
 export default function Dashboard() {
   return (
     <Box sx={{ display: 'flex' }}>

@@ -8,15 +8,12 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Chip from '@mui/material/Chip';
 
-
-
-
 export default function TasksTable(props) {
   const tasks = props.tasks;
 
+console.log(tasks.completion);
   const table = tasks.map((task) => {
     return (
-
       <TableRow
         key={task.name}
         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -34,7 +31,7 @@ export default function TasksTable(props) {
               clickable
               sx={{
                 '&:hover': {
-                  color: '#4caf50', backgroundColor: "white"
+                  color: '#4caf50', borderColor:'sucess', backgroundColor: "white", 
                 },
               }} /> : <Chip label={task.name}
                 component="a"
@@ -61,11 +58,14 @@ export default function TasksTable(props) {
         </TableCell>
 
       </TableRow>
-
     )
   })
+  
+
   return (
-    <div><h1>Tasks</h1>
+    <div>
+      
+
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
@@ -83,5 +83,5 @@ export default function TasksTable(props) {
         </Table>
       </TableContainer>
     </div>
-  );
+  )
 }
