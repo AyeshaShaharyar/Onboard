@@ -5,7 +5,7 @@ module.exports = (db) => {
   router.post("/new-tasks", (req, res) => {
     const taskFormData = req.body;
     console.log("taskFormData", taskFormData)
-    db.query(`INSERT INTO tasks(name, description, image, content, due_date, url, zoom) VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING * `,
+    db.query(`INSERT INTO tasks(name, description, image, content, due_date, link, url, zoom) VALUES($1,$2,$3,$4,$5,$6,$7,$8) RETURNING * `,
     [
       req.body.taskday,
       req.body.taskname,
@@ -13,13 +13,14 @@ module.exports = (db) => {
       req.body.description,
       req.body.duedate,
       req.body.video,
+      req.body.link,
       req.body.zoom
     ]
   )
       .then(data => {
         const tasks = data.rows;
         console.log(tasks)
-        res.redirect("/tasks");
+
       })
       .catch(err => {
         res
@@ -36,12 +37,6 @@ module.exports = (db) => {
       JOIN employees ON employees.id = tasks_employee.employee_id
     `;
 
-    // `SELECT users.id AS employeesID, first_name.employees AS fName , last_name.employees AS lName, name, description, due_date, tasks_employee.id, tasks.id, rating, completion FROM tasks_employee
-    // JOIN tasks ON task_id = tasks.id
-    // JOIN employees ON employee_id = employees.id
-    // JOIN users ON users_id = users.id
-    // WHERE employee_id = users.id`;
-
     if (completion) {
       query = query + ` AND completion = ${completion}`
     }
@@ -56,6 +51,23 @@ module.exports = (db) => {
         const employeesTasks = data.rows;
         console.log(employeesTasks)
         res.json({ employeesTasks });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
+  router.get("/new-tasks", (req, res) => {
+    let query = `SELECT employees.id AS employeesID, employees.first_name AS fName, employees.last_name AS lName FROM employees
+    JOIN users ON users.id = employees.user_id
+    WHERE job_role = 'Employee'`;
+    console.log(query);
+    db.query(query)
+      .then(data => {
+        const employeesNames = data.rows;
+        res.json({employeesNames});
       })
       .catch(err => {
         res
