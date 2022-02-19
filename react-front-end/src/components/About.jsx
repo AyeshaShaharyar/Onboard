@@ -1,7 +1,7 @@
 import React from "react";
 
 import Sidebar from "./Sidebar"
-import Video from "./tasks/Video"
+import Video from "./tasks_employee/Video"
 
 import { Box, Typography, Button, CssBaseline, Divider } from "@mui/material";
 

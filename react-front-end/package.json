@@ -10,6 +10,7 @@
     "@mui/icons-material": "^5.4.2",
     "@mui/material": "^5.4.2",
     "axios": "^0.18.1",
+    "dayjs": "^1.10.7",
     "form-data": "^4.0.0",
     "formik": "^2.2.9",
     "prop-types": "^15.8.1",
