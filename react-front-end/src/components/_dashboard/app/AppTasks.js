@@ -49,8 +49,8 @@ export default function InteractiveList(props) {
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText />
-        {task.description}
+        <ListItemText primary={task.description}/>
+      
       </ListItem>
     );
   });

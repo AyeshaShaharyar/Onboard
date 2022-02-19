@@ -1,23 +1,28 @@
-import * as React from 'react';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from "@mui/material/ListItemIcon";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+
+import onboard from "./onboard.png";
+import './styles.css'
+
+import { Drawer, List, ListItem, ListItemText, Divider } from "@mui/material";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import PermDeviceInformationIcon from '@mui/icons-material/PermDeviceInformation';
-import onboard from "./onboard.png";
-import './styles.css'
-
 
 const drawerWidth = 240;
 
+const routes = {
+  Dashboard: "/",
+  Tasks: "/about",
+  About: "/about",
+  Profile: "/profile"
+};
+
 export default function Sidebar() {
+  const { pathname } = useLocation();
+
   return (
     <Drawer
       sx={{
@@ -33,50 +38,46 @@ export default function Sidebar() {
     >
       <img className={'logo'} src={onboard} alt="Onboard" />
       <Divider />
-      <List>
-        <ListItem button key={'Dashboard'}>
-          <InboxIcon  fontSize="small" sx={{color: '#880e4f'}}/>
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            <ListItemIcon>
 
-              <ListItemText sx={{color: '#37474f'}} primary={'Dashboard'} />
-            </ListItemIcon>
+      <List>
+        <ListItem sx={{ '&focus': { bgcolor: '#00102A' } }} selected={'/' === pathname} button key={'Dashboard'}>
+          <InboxIcon fontSize="small" sx={{ color: '#880e4f' }} />
+          <Link to="/" style={{ textDecoration: 'none' }} >
+            <ListItemText sx={{ color: '#37474f', '&active': { color: '#ff5722' } }} primary={'Dashboard'} />
           </Link>
         </ListItem>
 
-        <ListItem button key={'Tasks'}>
-          <ListAltIcon fontSize="small" sx={{color: '#880e4f'}}/>
+        <ListItem selected={'/tasks' === pathname} button key={'Tasks'}>
+          <ListAltIcon fontSize="small" sx={{ color: '#880e4f' }} />
           <Link to="/tasks" style={{ textDecoration: 'none' }}>
-            <ListItemText sx={{color: '#37474f'}} primary={'Tasks'} />
+            <ListItemText sx={{ color: '#37474f' }} primary={'Tasks'} />
           </Link>
         </ListItem>
 
-        <ListItem button key={'About'}>
-          <PermDeviceInformationIcon fontSize="small" sx={{color: '#880e4f'}}/>
+        <ListItem selected={'/about' === pathname} button key={'About'}>
+          <PermDeviceInformationIcon fontSize="small" sx={{ color: '#880e4f' }} />
           <Link to="/about" style={{ textDecoration: 'none' }}>
-            <ListItemText sx={{color: '#37474f'}} primary={'About'} />
+            <ListItemText sx={{ color: '#37474f' }} primary={'About'} />
           </Link>
         </ListItem>
-
       </List>
-      
+
       <Divider />
+
       <List>
-        <ListItem button key={'Profile'}>
-        <AccountBoxIcon fontSize="small" sx={{color: '#880e4f'}}/>
-        <Link to="/profile" style={{ textDecoration: 'none' }}>
-        <ListItemText sx={{color: '#37474f'}} primary={'Profile'} />
+        <ListItem selected={'/profile' === pathname} button key={'Profile'} >
+          <AccountBoxIcon fontSize="small" sx={{ color: '#880e4f' }} />
+          <Link to="/profile" style={{ textDecoration: 'none' }} >
+            <ListItemText sx={{ color: '#37474f' }} primary={'Profile'} />
           </Link>
         </ListItem>
 
-        <ListItem button key={'Logout'}>
-          
-          <ExitToAppIcon fontSize="small" sx={{color: '#880e4f'}}/>
+        <ListItem style={{ bottom: 0, position: 'absolute'}} button key={'Logout'}>
+          <ExitToAppIcon fontSize="small" sx={{ color: '#880e4f' }} />
           <Link to="/logout" style={{ textDecoration: 'none' }}>
-            <ListItemText sx={{color: '#37474f'}} primary={'Logout'} />
+            <ListItemText sx={{ color: '#37474f' }} primary={'Logout'} />
           </Link>
         </ListItem>
-
       </List>
     </Drawer>
   );

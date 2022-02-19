@@ -1,6 +1,7 @@
 // material
-import { Box, Grid, Container, Typography } from "@mui/material";
 import React from "react";
+import { Box, Grid, Container, Typography, Divider } from "@mui/material";
+
 // components
 import AppProgressBar from "../components/_dashboard/app/AppProgressBar";
 import AppDateToday from "../components/_dashboard/app/AppDate";
@@ -9,7 +10,10 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 import { AppTasks } from "../components/_dashboard/app";
 
-export default function Dashboard() {
+export default function Dashboard(props) {
+  
+  const employeeName = props.employeeName;
+  
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -21,7 +25,7 @@ export default function Dashboard() {
         <Container maxWidth="xl">
           <Sidebar />
           <Box sx={{ pb: 5 }}>
-            <Typography variant="h4">Hi, Welcome Onboard!</Typography>
+          <Divider textAlign="left"><Typography variant="h4">Hi, {employeeName}! Welcome Onboard!</Typography></Divider>
           </Box>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={4}>

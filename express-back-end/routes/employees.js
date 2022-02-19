@@ -27,7 +27,7 @@ module.exports = (db) => {
     const employeeId = req.params.employee_id
     const completion = req.query.completion
 
-    let query = `SELECT name, description, due_date, tasks_employee.id, tasks.id, rating, completion FROM tasks_employee
+    let query = `SELECT first_name as fName, name, description, due_date, tasks_employee.id, tasks.id, rating, completion FROM tasks_employee
     JOIN tasks ON task_id = tasks.id
     JOIN employees ON employee_id = employees.id
     WHERE employee_id = $1`;

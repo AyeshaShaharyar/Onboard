@@ -1,5 +1,5 @@
-import React from 'react';
-import DatePicker from 'sassy-datepicker';
+import React from "react";
+import DatePicker from "sassy-datepicker";
 
 export default function DateToday() {
   return (
@@ -7,4 +7,4 @@ export default function DateToday() {
       <DatePicker />
     </div>
   );
-}
+};

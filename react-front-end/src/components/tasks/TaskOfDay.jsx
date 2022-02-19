@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from 'axios';
-import Sidebar from "./Sidebar";
+import axios from "axios";
+
+import Sidebar from "../Sidebar";
 import Video from "./Video";
 import BasicRating from "./BasicRating";
 import RatingDialog from "./RatingDialog";
-import Divider from '@mui/material/Divider';
-import CssBaseline from "@mui/material/CssBaseline";
-import { Box, Typography } from "@mui/material";
+
+import { Box, Divider, Typography, CssBaseline } from "@mui/material";
 
 const textarea = {
   width: '100%',
-  height: '1000px',
   padding: "12px 20px",
   border: "none",
   fontFamily: "Times New Roman, Times, serif",
   fontSize: "20px",
   resize: " none",
+  whiteSpace: "pre-line"
 }
 
 export default function TaskOfDay(props) {
@@ -32,22 +32,24 @@ export default function TaskOfDay(props) {
         console.log(response.data);
         setTask(response.data.task);
       });
-    } catch (error) {}
+    } catch (error) { }
   }, []);
 
-  const taskToSubmit = task.map((taskOfDay) => {
+  const taskToSubmit = task.map((taskOfDay, index) => {
     return (
 
-      <div className="App">
-        <Divider textAlign="left" sx={{color: ''}}><Typography variant="h4">Task - {taskOfDay.name} </Typography> </Divider>
+      <div key={index} className="App">
+        <Divider textAlign="left"><Typography variant="h4">Task - {taskOfDay.name} </Typography> </Divider>
+
         <div><h2>{taskOfDay.description}</h2>
-        <BasicRating rating={taskOfDay.rating}/> 
-</div>
+          <BasicRating rating={taskOfDay.rating} />
+        </div>
+
         <div className="image">
           {taskOfDay.image ? <img width="60%" height="40%" src={taskOfDay.image} alt="img" /> : null}
         </div>
-        {taskOfDay.content ? <textarea style={textarea}>{taskOfDay.content}</textarea> :
 
+        {taskOfDay.content ? <div style={textarea}>{taskOfDay.content}</div> :
           <p>To know more about this topic follow the <a href={taskOfDay.link}> link</a>. Complete all the sections.</p>}
 
         <div>{taskOfDay.url ? <Video url={taskOfDay.url} /> : null}</div>
