@@ -32,8 +32,7 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-      <Toolbar />
-        
+        <Toolbar />
       <ListItem button key={'Onboard'}>
       <IconButton />
         <Link to="/admin" style={{ textDecoration: 'none' }}>
@@ -43,7 +42,6 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List>
       <ListItem button key={'Employees'}>
-      <IconButton/>
         <Link to="/admin/employees" style={{ textDecoration: 'none' }}>
         <ListItemIcon>
           <InboxIcon/>

@@ -5,32 +5,38 @@ import TextField from "@mui/material/TextField";
 import CssBaseline from "@mui/material/CssBaseline";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import EmployeeList from "./EmployeeList";
+import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import { useState } from "react";
 import axios from "axios";
-const FormData = require('form-data');
+
 
 export default function TaskForm() {
   const [inputs, setInputs] = useState({});
+ 
 
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setInputs((values) => ({ ...values, [name]: value }));
   };
-
+  let navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(inputs);
 
-    const form_data = new FormData();
-     form_data.append();
+    const form_data = {...inputs};
+    
+    //  form_data.append();
     console.log("data as spread inputs", form_data);
     try {
       axios
-      .post("/api/admin/new-task", form_data, { headers: form_data.getHeaders() } )
+      .post("/api/admin/new-tasks", form_data )
       .then(function (response) {
-        console.log("h", response);
+        console.log("navigate")
+        navigate("/admin/tasks", { replace: true });
       })
     } catch (error) {
       console.log(error);
@@ -106,6 +112,13 @@ export default function TaskForm() {
               />
             </Grid>
             <Grid item xs={4}>
+              <TextField label="Additional Content" variant="outlined" 
+                name="link"
+                value={inputs.link || ""}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={4}>
               <TextField label="Zoom" variant="outlined" 
                 name="zoom"
                 value={inputs.zoom || ""}
@@ -113,9 +126,20 @@ export default function TaskForm() {
               />
             </Grid>
             <Grid item xs={4}>
+            <EmployeeList 
+              name="employee"
+              value={inputs.employee || ""}
+              onChange={handleChange}
+              setInputs= {setInputs}
+            />
+            </Grid>
+
+            <Grid item xs={4}>
+            
               <Button type="submit" onClick={handleSubmit} variant="contained">
                 Upload Task
               </Button>
+           
             </Grid>
           </Grid>
         </Box>

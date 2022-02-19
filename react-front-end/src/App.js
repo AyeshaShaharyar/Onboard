@@ -15,6 +15,7 @@ import AdminDashboard from "./components/admin/AdminDashboard"
 import TaskForm from "./components/admin/TaskForm";
 import AdminTasks from "./components/admin/AdminTasks";
 import AdminEmployees from "./components/admin/AdminEmployees";
+import AdminTaskOfDay from "./components/admin/AdminTaskOfDay";
 
 export default function App (){
   return (
@@ -29,6 +30,7 @@ export default function App (){
         <Route path="/admin/new-task" element={<TaskForm/>} />
         <Route path="/admin/tasks" element={<AdminTasks/>} />
         <Route path="/admin/employees" element={<AdminEmployees/>} />
+        <Route path="/tasks/:id" element={<AdminTaskOfDay/>} />
 
       </Routes>
     </BrowserRouter>

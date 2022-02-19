@@ -27,7 +27,7 @@ module.exports = (db) => {
     const employeeId = req.params.employee_id
     const completion = req.query.completion
 
-    let query = `SELECT name, description, due_date, tasks_employee.id, tasks.id, rating, completion FROM tasks_employee
+    let query = `SELECT name, description, due_date, tasks_employee.id, tasks.id, rating, completion, tasks_employee.start_date AS start_date FROM tasks_employee
     JOIN tasks ON task_id = tasks.id
     JOIN employees ON employee_id = employees.id
     WHERE employee_id = $1`;
@@ -74,6 +74,7 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+  
   router.patch("/:employee_id/tasks/:task_id", (req, res) => {
     const rating = req.body.rating;
     const employeeId = req.params.employee_id;

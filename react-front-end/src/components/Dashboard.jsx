@@ -22,7 +22,7 @@ export default function Dashboard() {
       >
         <Container maxWidth="xl">
           <Sidebar />
-          <Box sx={{ pb: 5 }}>
+          <Box sx={{ p: 6}}>
             <Typography variant="h4">Hi, Welcome Onboard!</Typography>
           </Box>
           <Grid container spacing={3}>

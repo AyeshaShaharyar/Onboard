@@ -4,6 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
+import Tasks from "./Tasks";
 
 export default function AdminTasks() {
   return (
@@ -14,7 +15,7 @@ export default function AdminTasks() {
         component="main"
         sx={{ flexGrow: 1, bgcolor: "background.default", p: 10 }}
       >
-        
+        <Tasks/>
         <Link to="/admin/new-task" style={{ textDecoration: "none" }}>
         <Button variant="contained">Add Task</Button>
         </Link>
