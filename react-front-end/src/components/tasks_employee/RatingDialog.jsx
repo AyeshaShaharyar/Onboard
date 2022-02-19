@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import axios from "axios";
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Rating from '@mui/material/Rating';
-import Box from '@mui/material/Box';
-import StarIcon from '@mui/icons-material/Star';
+
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
+import { Button, Box, Rating } from "@mui/material";
+import StarIcon from "@mui/icons-material/Star";
 
 const labels = {
   1: 'Useless',
@@ -52,19 +47,18 @@ export default function RatingDialog(props) {
       :
       <Button variant="contained" color="info" onClick={handleClickOpen}> Mark as Completed </Button>
        } 
+
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Rating</DialogTitle>
         <DialogContent>
           <DialogContentText>
             Rate this task
           </DialogContentText>
-          <Box
-            sx={{
-              width: 200,
-              display: 'flex',
-              alignItems: 'center',
-            }}
-          >
+          <Box sx={{ 
+            width: 200, 
+            display: 'flex', 
+            alignItems: 'center',}}>
+
             <Rating
               name="hover-feedback"
               value={value}
@@ -82,6 +76,7 @@ export default function RatingDialog(props) {
             )}
           </Box>
         </DialogContent>
+        
         <DialogActions>
           <Button onClick={handleClose} >Submit</Button>
         </DialogActions>

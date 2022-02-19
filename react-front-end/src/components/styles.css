@@ -1,5 +1,51 @@
-/* TasfOfDay.jsx */
+/* Sidebar.jsx */
+.logo {
+  display: flex;
+  align-self: center;
+  flex-direction:column;
+  padding: 10px;
+  width: 100%;
+  height: auto;
+}
 
+.MuiButtonBase-root.MuiListItem-root:hover {
+  background-color: yellow;
+}
+.MuiButtonBase-root.MuiListItem-root.Mui-selected {
+  background-color: lawngreen;
+}
+
+.MuiButtonBase-root.MuiListItem-root.Mui-selected:hover {
+  background-color: lawngreen;
+}
+
+/* Task.jsx */
+ .Button {
+ text-align: center; 
+
+}
+
+.Button button {
+  margin: 10px 10px;
+  color: #880e4f;
+  border-radius: 18px  ;
+  border-color: #880e4f;
+  
+} 
+
+.Button button:hover {
+  color: #e1bee7;
+  border-color: #e1bee7;
+  font-weight: bolder;
+  background-color: #880e4f;
+}
+
+.Button button:focus {
+  color: #880e4f;
+  background-color: #e1bee7;
+  border-color: #880e4f; 
+}
+/* TasfOfDay.jsx */
 .image {
 display: flex;
 flex-direction: row;
@@ -23,33 +69,4 @@ justify-content: center;
   width: 100%;
   position: absolute;
 }
-/* Task.jsx */
- .Button {
- text-align: center; 
 
-}
-
-.Button button {
-  margin: 10px 10px;
-  color: white;
-  background-color: #ff9800;
-  border-radius: 18px  ;
-  border-color: #ff9800;
-  
-} 
-
-.Button button:hover {
-  color: #ff9800;
-  background-color:white;
-  border-color: #ff9800;
-}
-
-/* Sidebar.jsx */
-.logo {
-  display: flex;
-  align-self: center;
-  flex-direction:column;
-  padding: 10px;
-  width: 100%;
-  height: auto;
-}

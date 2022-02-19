@@ -1,6 +1,6 @@
 import React from "react";
-import "./styles.css";
-import PropTypes from "prop-types";
+import "../styles.css";
+// import PropTypes from "prop-types";
 
 const YoutubeEmbed = ({ url }) => (
   <div className="video-responsive">
@@ -16,15 +16,14 @@ const YoutubeEmbed = ({ url }) => (
   </div>
 );
 
-YoutubeEmbed.propTypes = {
-  embedId: PropTypes.string.isRequired
-};
+// YoutubeEmbed.propTypes = {
+//   embedId: PropTypes.string.isRequired
+// };
 
 export default function Video(props) {
   const url = props.url;
+  
   return (
-    <div className="App">
       <YoutubeEmbed url={url} />
-    </div>
   );
 }
