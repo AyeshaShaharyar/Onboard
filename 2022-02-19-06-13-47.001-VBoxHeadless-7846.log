@@ -1,0 +1,12 @@
+Log created: 2022-02-19T06:13:47.015778000Z
+Process ID:  7846 (0x1ea6)
+Parent PID:  1011 (0x3f3)
+Executable:  /usr/lib/virtualbox/VBoxHeadless
+Arg[0]: /usr/lib/virtualbox/VBoxHeadless
+Arg[1]: --comment
+Arg[2]: luciana_default_1637691638976_73669
+Arg[3]: --startvm
+Arg[4]: c1e44753-3f6b-483d-a05c-2ba48cecba9f
+Arg[5]: --vrde
+Arg[6]: config
+AddRef: illegal refcnt=3221225469 state=2
