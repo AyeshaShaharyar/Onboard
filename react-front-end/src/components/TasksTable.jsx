@@ -7,12 +7,14 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Chip from '@mui/material/Chip';
+import dayjs from 'dayjs';
+
 
 export default function TasksTable(props) {
   const tasks = props.tasks;
-
-console.log(tasks.completion);
+ 
   const table = tasks.map((task) => {
+    // const end_date = dayjs(task.start_date).add
     return (
       <TableRow
         key={task.name}
@@ -74,7 +76,7 @@ console.log(tasks.completion);
               <TableCell align="left">Description</TableCell>
               <TableCell align="center">Due Date</TableCell>
               <TableCell align="center">Status</TableCell>
-
+          
             </TableRow>
           </TableHead>
           <TableBody>
