@@ -44,7 +44,7 @@ Speak Directly
 Directly communicate with the person you mean to. In many organizations, communication channels are created with many needless people passing on the messages. As we know thanks to the Chinese whispers game, this does not work when there are too many people. Just communicate directly with the person you mean to.
 
 Communication is something that has a substantial impact on our personal and professional life. It has to be taken seriously. And always remember some of the most successful and happy people in life are great communicators.', '5 days', null,
-'https://www.youtube.com/embed/oKCif3umcuI',
+'https://www.youtube.com/embed/knUEdy-kOIQ',
 null);
 
 INSERT INTO tasks (name, description, image, content, due_date, link, url, zoom)
@@ -158,7 +158,7 @@ Whether a rep needs to work with their marketing organization to ensure a smooth
 If you think social media can only be leveraged by the marketing department, think again. Social selling, or researching and connecting with potential buyers using social media platforms, is an important skill for sales reps.
 
 It’s worth noting, however, that social selling is only effective when done properly. That means reps shouldn’t flock to social media spamming user inboxes with unsolicited messages and flooding their timelines with promotional posts. Instead, reps should start by optimizing their professional social media profiles to attract potential customers, and take a thoughtful approach to outreach on the appropriate platforms at the appropriate times.' , '5 days', null,
-'https://www.youtube.com/embed/3095_w_666w',
+'https://www.youtube.com/embed/yI3DmqEGXfk',
 null);
 
 INSERT INTO tasks (name, description, image, content, due_date, link, url, zoom)

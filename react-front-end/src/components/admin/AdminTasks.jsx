@@ -1,25 +1,22 @@
 import React from "react";
-import ResponsiveDrawer from "./AdminPageStyle";
-import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
-import Button from "@mui/material/Button";
+
+import AdminSidebar from "./AdminSidebar"
 import Tasks from "./Tasks";
+
+import { Box, Typography, Button, CssBaseline, Divider } from "@mui/material";
 
 export default function AdminTasks() {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <ResponsiveDrawer />
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, bgcolor: "background.default", p: 10 }}
-      >
-        <Tasks/>
-        <Link to="/admin/new-task" style={{ textDecoration: "none" }}>
-        <Button variant="contained">Add Task</Button>
-        </Link>
-        
+      <AdminSidebar />
+
+      <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
+        <Divider variant='middle' textAlign="left"><Typography variant="h4">Admin - Tasks</Typography></Divider>
+
+        <Tasks />
+
       </Box>
     </Box>
   );
