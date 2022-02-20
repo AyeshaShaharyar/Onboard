@@ -9,6 +9,7 @@ export default function TasksTable(props) {
   const tasks = props.tasks;
 
   const table = tasks.map((task) => {
+  
     return (
       <TableRow
         key={task.name}
@@ -46,7 +47,7 @@ export default function TasksTable(props) {
         </TableCell>
 
         <TableCell align="left">{task.description}</TableCell>
-        <TableCell align="center">{task.due_date}</TableCell>
+        <TableCell align="center">{Math.max(task.pending_days.days, 0)} days</TableCell>
         <TableCell align="center">
           { task.completion ? 
             <IconButton>

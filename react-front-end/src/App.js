@@ -12,6 +12,7 @@ import TaskForm from "./components/admin/TaskForm";
 import AdminTasks from "./components/admin/AdminTasks";
 import AdminEmployees from "./components/admin/AdminEmployees";
 import AdminTaskOfDay from "./components/admin/AdminTaskOfDay";
+import FeedbackForm from "./components/admin/FeedbackForm";
 
 export default function App (){
 
@@ -46,6 +47,7 @@ export default function App (){
         <Route path="/admin/tasks" element={<AdminTasks/>} />
         <Route path="/admin/employees" element={<AdminEmployees/>} />
         <Route path="/tasks/:id" element={<AdminTaskOfDay/>} />
+        <Route path="/admin/feedback" element={<FeedbackForm/>} />
 
       </Routes>
     </BrowserRouter>

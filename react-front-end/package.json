@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.4.0",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@iconify/icons-eva": "^1.2.1",
@@ -11,6 +12,7 @@
     "@mui/material": "^5.4.2",
     "axios": "^0.18.1",
     "dayjs": "^1.10.7",
+    "emailjs-com": "^3.2.0",
     "form-data": "^4.0.0",
     "formik": "^2.2.9",
     "prop-types": "^15.8.1",

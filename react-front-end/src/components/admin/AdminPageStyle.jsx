@@ -106,8 +106,8 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Create New Task
+          <Typography variant="h3" noWrap component="div">
+            Hello Admin!
           </Typography>
         </Toolbar>
       </AppBar>

@@ -7,23 +7,31 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Chip from "@mui/material/Chip";
+import Button from "@mui/material/Chip";
+import { useNavigate } from "react-router-dom";
+import RateReviewIcon from "@mui/icons-material/RateReview";
+import FeedbackForm from './FeedbackForm';
 
 export default function TasksTable(props) {
   const [search, setSearch] = React.useState("");
-  const handleSearch = event => {
-    setSearch(event.target.value)
-}
-const handleClick = () => {
-  alert('You clicked the Chip.');
-};
 
-  
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
+  // let navigate = useNavigate();
+
+  function handleClick() {
+    // return navigate("/admin/feedback", { replace: true });
+    return <FeedbackForm />;
+  }
+
   const tasks = props.tasks;
 
-
-  const table = tasks.filter(task => task.fname.toLowerCase().includes(search.toLowerCase())).map((task, index) => {
-    return (
-      
+  const table = tasks
+    .filter((task) => task.fname.toLowerCase().includes(search.toLowerCase()))
+    .map((task, index) => {
+      return (
         <TableRow
           key={index}
           sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -69,7 +77,7 @@ const handleClick = () => {
           </TableCell>
           <TableCell align="left">{task.description}</TableCell>
           <TableCell align="center">{task.due_date}</TableCell>
-         
+
           <TableCell align="center">
             {task.completion ? (
               <Chip
@@ -77,6 +85,7 @@ const handleClick = () => {
                 variant="contained"
                 component="a"
                 color="success"
+                clickable
                 sx={{
                   "&:hover": {
                     color: "#4caf50",
@@ -97,15 +106,16 @@ const handleClick = () => {
                     backgroundColor: "white",
                   },
                 }}
-                onClick={handleClick}
+                // clickable
+                // onClick={handleClick}
               />
             )}
           </TableCell>
           <TableCell align="left">{task.rating}</TableCell>
+          <TableCell><RateReviewIcon onClick={handleClick} /></TableCell>
         </TableRow>
- 
-    );
-  });
+      );
+    });
 
   return (
     <div>
