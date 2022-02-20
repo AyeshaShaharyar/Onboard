@@ -1,19 +1,19 @@
 import React from "react";
-import ResponsiveDrawer from "./AdminPageStyle";
-import CssBaseline from "@mui/material/CssBaseline";
+import AdminSidebar from './AdminSidebar';
 
-import Box from "@mui/material/Box";
+import { Box, Typography, CssBaseline, Divider } from "@mui/material";
 
 export default function AdminDashboard() {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <ResponsiveDrawer />
-      <Box
-          component="main"
-          sx={{ flexGrow: 1, bgcolor: "background.default", p: 40 }}
-        >
-      <h1>Welcome!</h1>
+      <AdminSidebar />
+      <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
+     
+        <Divider variant='middle' textAlign="left"><Typography variant="h4">Admin</Typography></Divider>
+
+        <h1>Welcome!</h1>
+
       </Box>
     </Box>
   );

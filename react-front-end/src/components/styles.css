@@ -19,6 +19,17 @@
   background-color: lawngreen;
 }
 
+.css-5w55od-MuiList-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.css-h4y409-MuiList-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 /* Task.jsx */
  .Button {
  text-align: center; 

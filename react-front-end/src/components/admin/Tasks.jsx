@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
 import axios from "axios"
+
 import TasksTable from "./TasksTable";
+
+import { Box, CssBaseline } from '@mui/material';
 
 export default function Tasks() {
 
@@ -22,18 +23,15 @@ export default function Tasks() {
   }, []);
 
   return (
-      <Box sx={{ display: 'flex' }}>
-    <CssBaseline />
-    
-    <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
 
-     
-    <TasksTable
-      tasks={tasks}
-    />
+      <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
 
+        <TasksTable tasks={tasks}/>
+
+      </Box>
     </Box>
-  </Box>
 
-)
+  )
 };

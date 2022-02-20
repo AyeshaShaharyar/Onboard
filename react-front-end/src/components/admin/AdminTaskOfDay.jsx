@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import AdminPageStyle from './AdminPageStyle';
+
+import { Box, Typography, CssBaseline, Divider } from "@mui/material";
+
+
+import AdminSidebar from './AdminSidebar';
 import Video from "./Video";
 
 
@@ -29,39 +31,50 @@ export default function AdminTaskOfDay(props) {
     const URL = `/api/admin/3/tasks/${id}`;
     try {
       axios.get(URL).then((response) => {
-       
+
         setTask(response.data.task);
-        console.log("taskofday",response.data);
+        console.log("taskofday", response.data);
       });
-    } catch (error) {}
+    } catch (error) { }
   }, []);
 
   const taskToSubmit = task.map((taskOfDay, index) => {
-    
+
     return (
-    
+
       <div className="App" key={index}>
-        
-        <h1>Task - {taskOfDay.name}</h1>
-        <h2>{taskOfDay.description}</h2>
-        { taskOfDay.image ? <img width="80%" height="70%" src={taskOfDay.image} alt="img" /> : null }
 
-        { taskOfDay.content ? <div  style={textarea}>{taskOfDay.content}</div> : 
-        
-        <p>To know more about this topic follow the <a href={taskOfDay.link}> link</a>. Complete all the sections.</p> }
+        <div>
+          <h1>Task - {taskOfDay.name}</h1>
+        </div>
 
-        <h2>{taskOfDay.url }</h2>
-     
+        <div>
+          <h2>{taskOfDay.description}</h2>
+        </div>
+
+        <div className="image">
+          {taskOfDay.image ? <img width="60%" height="40%" src={taskOfDay.image} alt="img" /> : null}
+        </div>
+
+        <div>
+          {taskOfDay.content ? <div style={textarea}>{taskOfDay.content}</div> :
+            <p>To know more about this topic follow the <a href={taskOfDay.link}> link</a>. Complete all the sections.</p>}
+        </div>
+
+        <div>{taskOfDay.url ? <Video url={taskOfDay.url} /> : null}</div>
+
       </div>
     )
   })
 
   return (
-    <Box  sx={{ display: 'flex' }}>
-    
+    <Box sx={{ display: 'flex' }}>
+
       <CssBaseline />
-      <AdminPageStyle />
+      <AdminSidebar />
       <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
+
+        <Divider variant='middle' textAlign="left"><Typography variant="h4">Admin - Tasks</Typography></Divider>
 
         {taskToSubmit}
 
