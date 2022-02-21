@@ -12,8 +12,11 @@ import {
 import Paper from "@mui/material/Paper";
 import Chip from "@mui/material/Chip";
 
+import FormDialog from "./FeedbackForm";
+
 export default function TasksTable(props) {
   const [search, setSearch] = React.useState("");
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const handleSearch = (event) => {
     setSearch(event.target.value);
@@ -109,6 +112,10 @@ export default function TasksTable(props) {
             {" "}
             <BasicRating rating={task.rating} />
           </TableCell>
+          <TableCell>
+            
+            <FormDialog visible={isOpen} />
+          </TableCell>
         </TableRow>
       );
     });
@@ -144,6 +151,9 @@ export default function TasksTable(props) {
               </TableCell>
               <TableCell sx={{ fontWeight: "bold" }} align="center">
                 Rating
+              </TableCell>
+              <TableCell sx={{ fontWeight: "bold" }} align="center">
+               Feedback
               </TableCell>
             </TableRow>
           </TableHead>
