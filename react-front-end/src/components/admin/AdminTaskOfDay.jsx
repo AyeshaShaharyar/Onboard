@@ -68,7 +68,7 @@ export default function AdminTaskOfDay(props) {
         </div>
 
         <div>{taskOfDay.url ? <Video url={taskOfDay.url} /> : null}</div>
-        <div>{taskOfDay.zoom ? <div> Upcoming meeting. Add it to your <a href={taskOfDay.zoom}>calendar!</a>.</div> : null } </div>
+        <div>{taskOfDay.zoom ? <div> Upcoming meeting. Add it to your <a href={taskOfDay.zoom}>calendar</a>!</div> : null } </div>
       </div>
     );
   });

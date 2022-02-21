@@ -46,8 +46,9 @@ export default function TaskForm() {
 
                 <Divider variant='middle' textAlign="left" sx={{p:3}}><Typography variant="h4">Admin - Create a New Task</Typography></Divider>
                 <Grid container spacing={3} >
-                  <Grid container item justifyContent="center" spacing={4} xs={24} >
-                    <Grid item xs={6} >
+                  {/* <Grid container item justifyContent="center" spacing={4} xs={24} > */}
+                      {/* <Grid container item > */}
+                    <Grid container item >
                       <TextField
                         fullWidth
                         required
@@ -69,8 +70,7 @@ export default function TaskForm() {
                         onChange={handleChange}
                       />
                     </Grid> */}
-                  </Grid>
-
+                  {/* </Grid> */}
                   <Grid container item >
                     <TextField
                       fullWidth

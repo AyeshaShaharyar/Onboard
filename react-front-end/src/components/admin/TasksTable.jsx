@@ -21,9 +21,9 @@ export default function TasksTable(props) {
   const handleSearch = (event) => {
     setSearch(event.target.value);
   };
-  const handleClick = () => {
-    alert("You clicked the Chip.");
-  };
+  // const handleClick = () => {
+  //   alert("You clicked the Chip.");
+  // };
 
   const tasks = props.tasks;
 
@@ -83,13 +83,13 @@ export default function TasksTable(props) {
                 variant="contained"
                 component="a"
                 color="success"
-                sx={{
-                  "&:hover": {
-                    color: "#4caf50",
-                    backgroundColor: "white",
-                  },
-                }}
-                onClick={handleClick}
+                // sx={{
+                //   "&:hover": {
+                //     color: "#4caf50",
+                //     backgroundColor: "white",
+                //   },
+                // }}
+                // onClick={handleClick}
               />
             ) : (
               <Chip
@@ -97,13 +97,13 @@ export default function TasksTable(props) {
                 variant="contained"
                 component="a"
                 color="info"
-                sx={{
-                  "&:hover": {
-                    color: "#03a9f4",
-                    backgroundColor: "white",
-                  },
-                }}
-                onClick={handleClick}
+                // sx={{
+                //   "&:hover": {
+                //     color: "#03a9f4",
+                //     backgroundColor: "white",
+                //   },
+                // }}
+                // onClick={handleClick}
               />
             )}
           </TableCell>

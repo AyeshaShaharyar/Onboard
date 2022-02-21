@@ -67,16 +67,16 @@ export default function Sidebar() {
       <List>
         <ListItem selected={'/profile' === pathname} button key={'Profile'} >
           <AccountBoxIcon fontSize="small" sx={{ color: '#880e4f' }} />
-          <Link to="/profile" style={{ textDecoration: 'none' }} >
+          {/* <Link to="/profile" style={{ textDecoration: 'none' }} > */}
             <ListItemText sx={{ color: '#37474f' }} primary={'Profile'} />
-          </Link>
+          {/* </Link> */}
         </ListItem>
 
         <ListItem button key={'Logout'}>
           <ExitToAppIcon fontSize="small" sx={{ color: '#880e4f' }} />
-          <Link to="/logout" style={{ textDecoration: 'none' }}>
+          {/* <Link to="/logout" style={{ textDecoration: 'none' }}> */}
             <ListItemText sx={{ color: '#37474f' }} primary={'Logout'} />
-          </Link>
+          {/* </Link> */}
         </ListItem>
       </List>
     </Drawer>
