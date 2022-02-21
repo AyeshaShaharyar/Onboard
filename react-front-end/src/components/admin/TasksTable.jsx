@@ -114,7 +114,7 @@ export default function TasksTable(props) {
 
             <TableRow>
               <TableCell sx={{ fontWeight: 'bold' }} align="left">
-                <input className="Search" type="text" onChange={handleSearch} value={search} placeholder="Search Employee by Name" />
+                <input className="Search" type="text" onChange={handleSearch} value={search} placeholder="Search Employee" />
                 </TableCell>
               <TableCell sx={{ fontWeight: 'bold' }} align="left">Task</TableCell>
               <TableCell sx={{ fontWeight: 'bold' }} align="left">Name</TableCell>

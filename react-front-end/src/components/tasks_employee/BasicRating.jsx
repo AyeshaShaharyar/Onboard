@@ -5,7 +5,7 @@ export default function BasicRating(props) {
  
   const rating = props.rating
     return (
-      <Box sx={{ '& > legend': { mt: 2 }, }}>
+      <Box sx={{ '& > legend': { mt: 5 }, }}>
         <Rating name="read-only" value={rating} readOnly />  
       </Box>
   );

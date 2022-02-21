@@ -44,7 +44,7 @@ export default function TaskForm() {
               <AdminSidebar />
               <Box component="main" sx={{ flexGrow: 2, bgcolor: 'background.default', p: 3 }}>
 
-                <Divider variant='middle' textAlign="left" sx={{p:3}}><Typography variant="h4">Admin -Create a New Task</Typography></Divider>
+                <Divider variant='middle' textAlign="left" sx={{p:3}}><Typography variant="h4">Admin - Create a New Task</Typography></Divider>
                 <Grid container spacing={3} >
                   <Grid container item justifyContent="center" spacing={4} xs={24} >
                     <Grid item xs={6} >
@@ -149,7 +149,7 @@ export default function TaskForm() {
                   <Grid item >
 
                     <Button variant="contained" color="info" type="submit" onClick={handleSubmit} >
-                      Upload Task
+                      Assign Task
                     </Button>
 
                   </Grid>
