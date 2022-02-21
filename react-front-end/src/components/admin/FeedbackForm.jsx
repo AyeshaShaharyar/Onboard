@@ -1,6 +1,3 @@
-
-
-
 import React, { useRef } from "react";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -11,6 +8,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import emailjs from "@emailjs/browser";
+
 
 export default function FormDialog(props) {
   
@@ -50,9 +48,9 @@ export default function FormDialog(props) {
 
   return (
     <div>
-    <RateReviewIcon onClick={handleClickOpen} />
+
+    <RateReviewIcon sx={{color:'#263238'}} align='center' onClick={handleClickOpen} />
       {/* <Button variant="outlined" onClick=>
-      
       </Button> */}
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Feedback</DialogTitle>

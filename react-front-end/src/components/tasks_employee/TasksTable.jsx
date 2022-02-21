@@ -38,9 +38,9 @@ export default function TasksTable(props) {
               variant="contained"
               color="info"
               clickable sx={
-                {
+                { 
                   '&:hover': {
-                    color: "#03a9f4", backgroundColor: 'white', fontWeight:'bolder',
+                    color: "#03a9f4", backgroundColor: 'white', fontWeight:'bolder', 
                   },
                 }} />
           }

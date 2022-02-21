@@ -16,10 +16,10 @@
 .Search {
   display: flex;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 10px;
   height: 25px;
   margin-bottom: 10px;
-  border-color: lawngreen;
+  border-color: #37474f;
   border-style: solid;
 }
 

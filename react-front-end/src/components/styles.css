@@ -9,14 +9,14 @@
 }
 
 .MuiButtonBase-root.MuiListItem-root:hover {
-  background-color: yellow;
+  background-color: #f3e5f5;
 }
 .MuiButtonBase-root.MuiListItem-root.Mui-selected {
-  background-color: lawngreen;
+  background-color: #e1bee7;
 }
 
 .MuiButtonBase-root.MuiListItem-root.Mui-selected:hover {
-  background-color: lawngreen;
+  background-color: #e1bee7;
 }
 
 .css-5w55od-MuiList-root {
@@ -38,23 +38,22 @@
 
 .Button button {
   margin: 10px 10px;
-  color: #880e4f;
+  color: #263238;
   border-radius: 18px  ;
-  border-color: #880e4f;
-  
+  border-color:#263238;
 } 
 
 .Button button:hover {
-  color: #e1bee7;
-  border-color: #e1bee7;
+  color: #263238;
+  border-color:#263238;
   font-weight: bolder;
-  background-color: #880e4f;
+  background-color: #f5f5f5;
 }
 
 .Button button:focus {
-  color: #880e4f;
-  background-color: #e1bee7;
-  border-color: #880e4f; 
+  color: #263238;
+  background-color: #cfd8dc;
+  border-color: #263238; 
 }
 /* TasfOfDay.jsx */
 .image {
