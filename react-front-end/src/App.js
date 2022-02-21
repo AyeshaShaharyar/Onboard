@@ -14,30 +14,30 @@ import AdminEmployees from "./components/admin/AdminEmployees";
 import AdminTaskOfDay from "./components/admin/AdminTaskOfDay";
 import FeedbackForm from "./components/admin/FeedbackForm";
 
-export default function App (){
+export default function App() {
 
   const [employeeName, setEmployeeName] = useState('')
-  
+
   // /api/employees/3/tasks
-  useEffect(()=>{
+  useEffect(() => {
     const URL = "/api/employees/3/tasks"
     try {
       axios.get(URL)
-      .then((response)=>{
-        if (response.data.employeesTasks) {
-          setEmployeeName(response.data.employeesTasks[0].fname)
-        }
-        
-      })
+        .then((response) => {
+          if (response.data.employeesTasks) {
+            setEmployeeName(response.data.employeesTasks[0].fname)
+          }
+
+        })
     } catch (error) {
-      
+
     }
-  }, []); 
+  }, []);
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Dashboard employeeName={employeeName}/>} />
+        <Route index element={<Dashboard employeeName={employeeName} />} />
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />

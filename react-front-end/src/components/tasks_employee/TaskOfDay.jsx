@@ -39,6 +39,7 @@ export default function TaskOfDay(props) {
     return (
 
       <div key={index} className="App">
+        
         <Divider textAlign="left"><Typography variant="h4">Task - {taskOfDay.name} </Typography> </Divider>
 
         <div><h2>{taskOfDay.description}</h2>
@@ -49,12 +50,16 @@ export default function TaskOfDay(props) {
           {taskOfDay.image ? <img width="60%" height="40%" src={taskOfDay.image} alt="img" /> : null}
         </div>
 
-        {taskOfDay.content ? <div style={textarea}>{taskOfDay.content}</div> :
-          <p>To know more about this topic follow the <a href={taskOfDay.link}> link</a>. Complete all the sections.</p>}
+        <div>{taskOfDay.content ? <div style={textarea}>{taskOfDay.content}</div> : null}</div>
+        <div>{taskOfDay.link ? <p>To know more about this topic follow the <a href={taskOfDay.link}> link</a>. Complete all the sections.</p>:null}
+        </div>
 
         <div>{taskOfDay.url ? <Video url={taskOfDay.url} /> : null}</div>
 
+        <div>{taskOfDay.zoom ? <div> Upcoming meeting. Add it to your <a href={taskOfDay.zoom}>calendar!</a>.</div> : null } </div>
+
         <RatingDialog id={id} completion={taskOfDay.completion} />
+
       </div>
     )
   })

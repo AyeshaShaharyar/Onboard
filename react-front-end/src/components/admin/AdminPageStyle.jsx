@@ -1,4 +1,5 @@
-
+// USE ADMINSIDEBAR
+// DELETE THIS FILE
 import * as React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
@@ -32,53 +33,53 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-        <Toolbar />
+      <Toolbar />
       <ListItem button key={'Onboard'}>
-      <IconButton />
+        <IconButton />
         <Link to="/admin" style={{ textDecoration: 'none' }}>
           <ListItemText primary={'Onboard'} />
         </Link>
       </ListItem>
       <Divider />
       <List>
-      <ListItem button key={'Employees'}>
-        <Link to="/admin/employees" style={{ textDecoration: 'none' }}>
-        <ListItemIcon>
-          <InboxIcon/>
-          <ListItemText primary={'Employees'} />
-        </ListItemIcon>
-        </Link>
-      </ListItem>
-      
-      <ListItem button key={'Tasks'}>
-      <IconButton />
-        <Link to="/admin/tasks" style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'Tasks'} />
-        </Link>
-      </ListItem>
-          
-      <ListItem button key={'Create Tasks'}>
-      <IconButton/>
-        <Link to="/admin/new-task" style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'Create Tasks'} />
-        </Link>
-      </ListItem>
+        <ListItem button key={'Employees'}>
+          <Link to="/admin/employees" style={{ textDecoration: 'none' }}>
+            <ListItemIcon>
+              <InboxIcon />
+              <ListItemText primary={'Employees'} />
+            </ListItemIcon>
+          </Link>
+        </ListItem>
+
+        <ListItem button key={'Tasks'}>
+          <IconButton />
+          <Link to="/admin/tasks" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'Tasks'} />
+          </Link>
+        </ListItem>
+
+        <ListItem button key={'Create Tasks'}>
+          <IconButton />
+          <Link to="/admin/new-task" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'Create Tasks'} />
+          </Link>
+        </ListItem>
       </List>
       <Divider />
       <List>
-         <ListItem button key={'Settings'}>
-      
-        <Link to="/settings" style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'Settings'} />
-        </Link>
-      </ListItem>
-    
-      <ListItem button key={'Logout'}>
-      
-        <Link to="/logout"  style={{ textDecoration: 'none' }}>
-          <ListItemText primary={'Logout'} />
-        </Link>
-      </ListItem>
+        <ListItem button key={'Settings'}>
+
+          <Link to="/settings" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'Settings'} />
+          </Link>
+        </ListItem>
+
+        <ListItem button key={'Logout'}>
+
+          <Link to="/logout" style={{ textDecoration: 'none' }}>
+            <ListItemText primary={'Logout'} />
+          </Link>
+        </ListItem>
       </List>
     </div>
   );

@@ -12,7 +12,7 @@ const rating = props.rating
         '& > legend': { mt: 2 },
       }}
     >
-      <Rating name="read-only" value={rating} readOnly />  
+      <Rating size="small" name="read-only" value={rating} readOnly />  
     </Box>
   );
 }

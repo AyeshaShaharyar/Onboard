@@ -44,8 +44,8 @@ export default function InteractiveList(props) {
     >
       <Card>
         <CardHeader title="Upcoming Tasks" />
-        <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
-          <Grid item xs={12} md={6} lg={12}>
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid item xs={12} md={12} lg={12}>
             <List>{taskList}</List>
           </Grid>
         </Box>

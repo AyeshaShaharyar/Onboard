@@ -8,7 +8,7 @@ CREATE TABLE tasks (
   description TEXT NOT NULL,
   image VARCHAR(350),
   content TEXT,
-  due_date TIMESTAMP NOT NULL DEFAULT CURRENT_DATE + INTERVAL '5 day',
+  due_date TIMESTAMP DEFAULT CURRENT_DATE + INTERVAL '5 day',
   link VARCHAR(350),
   url VARCHAR(255),
   zoom VARCHAR(255)

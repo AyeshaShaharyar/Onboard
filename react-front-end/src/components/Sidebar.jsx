@@ -15,7 +15,7 @@ const drawerWidth = 240;
 
 const routes = {
   Dashboard: "/",
-  Tasks: "/about",
+  Tasks: "/tasks",
   About: "/about",
   Profile: "/profile"
 };
@@ -40,7 +40,7 @@ export default function Sidebar() {
       <Divider />
 
       <List>
-        <ListItem sx={{ '&focus': { bgcolor: '#00102A' } }} selected={'/' === pathname} button key={'Dashboard'}>
+        <ListItem selected={'/' === pathname} button key={'Dashboard'}>
           <InboxIcon fontSize="small" sx={{ color: '#880e4f' }} />
           <Link to="/" style={{ textDecoration: 'none' }} >
             <ListItemText sx={{ color: '#37474f', '&active': { color: '#ff5722' } }} primary={'Dashboard'} />
@@ -62,7 +62,7 @@ export default function Sidebar() {
         </ListItem>
       </List>
 
-      <Divider />
+      <Divider orientation='vertical' sx={{ height: '30%' }} />
 
       <List>
         <ListItem selected={'/profile' === pathname} button key={'Profile'} >
@@ -72,7 +72,7 @@ export default function Sidebar() {
           </Link>
         </ListItem>
 
-        <ListItem style={{ bottom: 0, position: 'absolute'}} button key={'Logout'}>
+        <ListItem button key={'Logout'}>
           <ExitToAppIcon fontSize="small" sx={{ color: '#880e4f' }} />
           <Link to="/logout" style={{ textDecoration: 'none' }}>
             <ListItemText sx={{ color: '#37474f' }} primary={'Logout'} />

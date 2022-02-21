@@ -1,33 +1,26 @@
 import * as React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
+import "./styles/styles.css";
+import BasicRating from "./BasicRating";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Chip from "@mui/material/Chip";
-import Button from "@mui/material/Chip";
-import { useNavigate } from "react-router-dom";
-
-
-import FormDialog from "./FeedbackForm";
 
 export default function TasksTable(props) {
   const [search, setSearch] = React.useState("");
-  const [isOpen, setIsOpen] = React.useState(false);
 
   const handleSearch = (event) => {
     setSearch(event.target.value);
   };
-
-  let navigate = useNavigate();
-
-  function handleClick() {
-    // return navigate("/admin/feedback", { replace: true });
-    // return <FeedbackForm />;
-    setIsOpen(true);
-  }
+  const handleClick = () => {
+    alert("You clicked the Chip.");
+  };
 
   const tasks = props.tasks;
 
@@ -39,7 +32,6 @@ export default function TasksTable(props) {
           key={index}
           sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
         >
-          <TableCell align="left">{task.employeesid}</TableCell>
           <TableCell align="left">
             {task.fname} {task.lname}
           </TableCell>
@@ -79,7 +71,7 @@ export default function TasksTable(props) {
             )}
           </TableCell>
           <TableCell align="left">{task.description}</TableCell>
-          <TableCell align="center">{task.due_date}</TableCell>
+          <TableCell align="center">{Math.max(task.pending_days.days, 0)} days</TableCell>
 
           <TableCell align="center">
             {task.completion ? (
@@ -88,7 +80,6 @@ export default function TasksTable(props) {
                 variant="contained"
                 component="a"
                 color="success"
-                clickable
                 sx={{
                   "&:hover": {
                     color: "#4caf50",
@@ -109,15 +100,14 @@ export default function TasksTable(props) {
                     backgroundColor: "white",
                   },
                 }}
-                // clickable
-                // onClick={handleClick}
+                onClick={handleClick}
               />
             )}
           </TableCell>
-          <TableCell align="left">{task.rating}</TableCell>
-          <TableCell>
-            
-            <FormDialog visible={isOpen} />
+          {/* <TableCell align="left">{task.rating}</TableCell> */}
+          <TableCell align="left">
+            {" "}
+            <BasicRating rating={task.rating} />
           </TableCell>
         </TableRow>
       );
@@ -125,23 +115,36 @@ export default function TasksTable(props) {
 
   return (
     <div>
-      <h1>Tasks</h1>
-      <input type="text" onChange={handleSearch} value={search} />
+      {/* <input className="Search" type="text" onChange={handleSearch} value={search} placeholder="Search Employee by Name" /> */}
+
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell align="center">Search</TableCell>
-            </TableRow>
-
-            <TableRow>
-              <TableCell>ID</TableCell>
-              <TableCell>Name</TableCell>
-              <TableCell>Task Day</TableCell>
-              <TableCell align="left">Description</TableCell>
-              <TableCell align="center">Due Date</TableCell>
-              <TableCell align="center">Status</TableCell>
-              <TableCell align="center">Rating</TableCell>
+              <TableCell sx={{ fontWeight: "bold" }} align="left">
+                <input
+                  className="Search"
+                  type="text"
+                  onChange={handleSearch}
+                  value={search}
+                  placeholder="Search Employee"
+                />
+              </TableCell>
+              <TableCell sx={{ fontWeight: "bold" }} align="left">
+                Task
+              </TableCell>
+              <TableCell sx={{ fontWeight: "bold" }} align="left">
+                Name
+              </TableCell>
+              <TableCell sx={{ fontWeight: "bold" }} align="center">
+                Due Date
+              </TableCell>
+              <TableCell sx={{ fontWeight: "bold" }} align="center">
+                Status
+              </TableCell>
+              <TableCell sx={{ fontWeight: "bold" }} align="center">
+                Rating
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>{table}</TableBody>
