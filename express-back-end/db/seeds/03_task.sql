@@ -45,7 +45,7 @@ Directly communicate with the person you mean to. In many organizations, communi
 
 Communication is something that has a substantial impact on our personal and professional life. It has to be taken seriously. And always remember some of the most successful and happy people in life are great communicators.', null,
 'https://www.youtube.com/embed/oKCif3umcuI',
-null);
+'https://calendar.google.com/event?action=TEMPLATE&tmeid=ZHNobjc5a3VhOXAwMmZvdmJxNWRudGZmaHMgYXllc2hhMjU5OEBt&tmsrc=ayesha2598%40gmail.com');
 
 INSERT INTO tasks (name, description, image, content, link, url, zoom)
 VALUES ('Day 2','10 Ways to Deliver Consistently Great Customer Service', 'https://www.corporatecomplianceinsights.com/wp-content/uploads/2018/11/training.jpg', 'You may have a fantastic product, but if your customer service is unhelpful, unreliable, or just plain hard to get in touch with, folks will hear about it, and you’ll lose customers over it.
@@ -158,11 +158,10 @@ Whether a rep needs to work with their marketing organization to ensure a smooth
 If you think social media can only be leveraged by the marketing department, think again. Social selling, or researching and connecting with potential buyers using social media platforms, is an important skill for sales reps.
 
 It’s worth noting, however, that social selling is only effective when done properly. That means reps shouldn’t flock to social media spamming user inboxes with unsolicited messages and flooding their timelines with promotional posts. Instead, reps should start by optimizing their professional social media profiles to attract potential customers, and take a thoughtful approach to outreach on the appropriate platforms at the appropriate times.' , null,
-'https://www.youtube.com/embed/3095_w_666w',
-null);
+'https://www.youtube.com/embed/3095_w_666w', 'https://calendar.google.com/event?action=TEMPLATE&tmeid=ZzRpOGRraHFobTVkZnMwbzNsampzMWlsaWMgYXllc2hhMjU5OEBt&tmsrc=ayesha2598%40gmail.com');
 
 INSERT INTO tasks (name, description, image, content, link, url, zoom)
-VALUES ('Day 4','Successful Negotiation: Essential Strategies and Skills', 'https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_fddcc2dee5ca86277467c0ac6ca5005b/coursera-for-business.png', null , 'https://calendar.google.com/event?action=TEMPLATE&tmeid=ZzRpOGRraHFobTVkZnMwbzNsampzMWlsaWMgYXllc2hhMjU5OEBt&tmsrc=ayesha2598%40gmail.com', null, null);
+VALUES ('Day 4','Successful Negotiation: Essential Strategies and Skills', 'https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_fddcc2dee5ca86277467c0ac6ca5005b/coursera-for-business.png', null , null, null, 'https://calendar.google.com/event?action=TEMPLATE&tmeid=ZzRpOGRraHFobTVkZnMwbzNsampzMWlsaWMgYXllc2hhMjU5OEBt&tmsrc=ayesha2598%40gmail.com');
 
 INSERT INTO tasks (name, description, image, content, link, url, zoom)
 VALUES ('Day 5','5 Ways To Improve Employee Development At Your Company', 'http://www.tekshapers.com/uploads/blog_image/TrainingDevelopment.jpg','Every company has it’s own set of priorities to help take it to the next level, and knowing which initiatives will make the greatest impact can be tough. But what makes a business prosperous and truly differentiates one organization from the rest is not the product it sells or the service it offers, it’s the people within it. And what people at your org  deeply crave are more opportunities for employee development.

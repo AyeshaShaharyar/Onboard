@@ -9,21 +9,24 @@ import Paper from "@mui/material/Paper";
 import Chip from "@mui/material/Chip";
 import Button from "@mui/material/Chip";
 import { useNavigate } from "react-router-dom";
-import RateReviewIcon from "@mui/icons-material/RateReview";
-import FeedbackForm from './FeedbackForm';
+
+
+import FormDialog from "./FeedbackForm";
 
 export default function TasksTable(props) {
   const [search, setSearch] = React.useState("");
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const handleSearch = (event) => {
     setSearch(event.target.value);
   };
 
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
 
   function handleClick() {
     // return navigate("/admin/feedback", { replace: true });
-    return <FeedbackForm />;
+    // return <FeedbackForm />;
+    setIsOpen(true);
   }
 
   const tasks = props.tasks;
@@ -112,7 +115,10 @@ export default function TasksTable(props) {
             )}
           </TableCell>
           <TableCell align="left">{task.rating}</TableCell>
-          <TableCell><RateReviewIcon onClick={handleClick} /></TableCell>
+          <TableCell>
+            
+            <FormDialog visible={isOpen} />
+          </TableCell>
         </TableRow>
       );
     });

@@ -9,7 +9,7 @@ import Avatar from "@mui/material/Avatar";
 import Grid from "@mui/material/Grid";
 import FolderIcon from "@mui/icons-material/Folder";
 
-export default function InteractiveList(props) {
+export default function AppUpcomingMeetings(props) {
   const [tasks, setTasks] = useState([]);
   useEffect(() => {
     const URL = "/api/employees/3/tasks";
@@ -30,8 +30,12 @@ export default function InteractiveList(props) {
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary={task.description} />
+        {task.zoom ? 
+        <ListItemText primary={"Upcoming Meeting on " + task.name }/>
+       : "-" 
+       }
       </ListItem>
+      
     );
   });
 
@@ -43,7 +47,7 @@ export default function InteractiveList(props) {
       alignItems="flex-end"
     >
       <Card>
-        <CardHeader title="Upcoming Tasks" />
+        <CardHeader title="Upcoming Zoom Meetings" />
         <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
           <Grid item xs={12} md={6} lg={12}>
             <List>{taskList}</List>

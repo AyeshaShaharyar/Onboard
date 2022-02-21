@@ -5,6 +5,7 @@ import { Box, Grid, Container, Typography, Divider } from "@mui/material";
 // components
 import AppProgressBar from "../components/_dashboard/app/AppProgressBar";
 import AppDateToday from "../components/_dashboard/app/AppDate";
+import AppUpcomingMeetings from "../components/_dashboard/app/AppUpcomingMeetings";
 import Sidebar from "./Sidebar";
 import CssBaseline from "@mui/material/CssBaseline";
 
@@ -37,9 +38,9 @@ export default function Dashboard(props) {
             <Grid item xs={12} md={6} lg={8}>
               <AppTasks />
             </Grid>
-            {/* <Grid item xs={12} md={6} lg={4}>
-            <AppCurrentVisits />
-          </Grid> */}
+            <Grid item xs={12} md={6} lg={4}>
+            <AppUpcomingMeetings />
+          </Grid>
 
             {/* <Grid item xs={12} md={6} lg={8}>
             <AppNewsUpdate />
