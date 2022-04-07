@@ -10,6 +10,12 @@ An application design from HR to training for the newly hired employees to compl
 !["Screenshot of admin feedback](https://github.com/AyeshaShaharyar/Onboard/blob/master/docs/AdminFeedback.png)
 !["Screenshot of admin assign task](https://github.com/AyeshaShaharyar/Onboard/blob/master/docs/AdminAssignTask.png)
 
+## Stack
+- React
+- Node
+- Express
+- Material-UI
+
 ## Dependencies
 - Node 10.x or above
 - NPM 5.x or above
